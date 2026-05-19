@@ -1,0 +1,56 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container", "height": 300, "background": "transparent",
+  "data": {
+    "values": [
+      {"month":"Jan","month_num":1,  "fires":95,  "state":"VIC"},
+      {"month":"Feb","month_num":2,  "fires":88,  "state":"VIC"},
+      {"month":"Mar","month_num":3,  "fires":72,  "state":"VIC"},
+      {"month":"Apr","month_num":4,  "fires":28,  "state":"VIC"},
+      {"month":"May","month_num":5,  "fires":15,  "state":"VIC"},
+      {"month":"Jun","month_num":6,  "fires":8,   "state":"VIC"},
+      {"month":"Jul","month_num":7,  "fires":6,   "state":"VIC"},
+      {"month":"Aug","month_num":8,  "fires":12,  "state":"VIC"},
+      {"month":"Sep","month_num":9,  "fires":35,  "state":"VIC"},
+      {"month":"Oct","month_num":10, "fires":58,  "state":"VIC"},
+      {"month":"Nov","month_num":11, "fires":78,  "state":"VIC"},
+      {"month":"Dec","month_num":12, "fires":92,  "state":"VIC"},
+      {"month":"Jan","month_num":1,  "fires":110, "state":"NSW"},
+      {"month":"Feb","month_num":2,  "fires":98,  "state":"NSW"},
+      {"month":"Mar","month_num":3,  "fires":65,  "state":"NSW"},
+      {"month":"Apr","month_num":4,  "fires":22,  "state":"NSW"},
+      {"month":"May","month_num":5,  "fires":10,  "state":"NSW"},
+      {"month":"Jun","month_num":6,  "fires":5,   "state":"NSW"},
+      {"month":"Jul","month_num":7,  "fires":4,   "state":"NSW"},
+      {"month":"Aug","month_num":8,  "fires":9,   "state":"NSW"},
+      {"month":"Sep","month_num":9,  "fires":42,  "state":"NSW"},
+      {"month":"Oct","month_num":10, "fires":72,  "state":"NSW"},
+      {"month":"Nov","month_num":11, "fires":95,  "state":"NSW"},
+      {"month":"Dec","month_num":12, "fires":105, "state":"NSW"},
+      {"month":"Jan","month_num":1,  "fires":85,  "state":"QLD"},
+      {"month":"Feb","month_num":2,  "fires":78,  "state":"QLD"},
+      {"month":"Mar","month_num":3,  "fires":82,  "state":"QLD"},
+      {"month":"Apr","month_num":4,  "fires":65,  "state":"QLD"},
+      {"month":"May","month_num":5,  "fires":55,  "state":"QLD"},
+      {"month":"Jun","month_num":6,  "fires":48,  "state":"QLD"},
+      {"month":"Jul","month_num":7,  "fires":52,  "state":"QLD"},
+      {"month":"Aug","month_num":8,  "fires":68,  "state":"QLD"},
+      {"month":"Sep","month_num":9,  "fires":75,  "state":"QLD"},
+      {"month":"Oct","month_num":10, "fires":80,  "state":"QLD"},
+      {"month":"Nov","month_num":11, "fires":82,  "state":"QLD"},
+      {"month":"Dec","month_num":12, "fires":88,  "state":"QLD"}
+    ]
+  },
+  "mark": { "type": "arc", "innerRadius": 40 },
+  "encoding": {
+    "theta": { "field": "month_num", "type": "quantitative", "stack": false, "scale": { "domain": [1, 13] } },
+    "radius": { "field": "fires", "type": "quantitative", "scale": { "rangeMin": 40 } },
+    "color": {
+      "field": "state", "type": "nominal",
+      "scale": { "domain": ["VIC","NSW","QLD"], "range": ["#b83d10","#9a7820","#3d5a32"] },
+      "legend": { "title": "State", "labelColor": "#888", "titleColor": "#888", "labelFont": "DM Mono", "orient": "bottom" }
+    },
+    "tooltip": [{ "field": "month", "title": "Month" }, { "field": "state", "title": "State" }, { "field": "fires", "title": "Fire Events (index)" }]
+  },
+  "config": { "view": { "stroke": null } }
+}

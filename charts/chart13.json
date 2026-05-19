@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container", "height": 320, "background": "transparent",
+  "data": {
+    "values": [
+      {"year":1990,"fire_days":18,"scenario":"Historical"},{"year":2000,"fire_days":20,"scenario":"Historical"},{"year":2010,"fire_days":22,"scenario":"Historical"},{"year":2020,"fire_days":28,"scenario":"Historical"},{"year":2024,"fire_days":32,"scenario":"Historical"},
+      {"year":2024,"fire_days":32,"scenario":"High Emissions"},{"year":2030,"fire_days":36,"scenario":"High Emissions"},{"year":2040,"fire_days":42,"scenario":"High Emissions"},{"year":2050,"fire_days":50,"scenario":"High Emissions"},{"year":2060,"fire_days":60,"scenario":"High Emissions"},{"year":2070,"fire_days":72,"scenario":"High Emissions"},
+      {"year":2024,"fire_days":32,"scenario":"Low Emissions"},{"year":2030,"fire_days":34,"scenario":"Low Emissions"},{"year":2040,"fire_days":37,"scenario":"Low Emissions"},{"year":2050,"fire_days":40,"scenario":"Low Emissions"},{"year":2060,"fire_days":42,"scenario":"Low Emissions"},{"year":2070,"fire_days":44,"scenario":"Low Emissions"}
+    ]
+  },
+  "layer": [
+    {
+      "mark": { "type": "line", "strokeWidth": 2.5 },
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative", "scale": { "domain": [1990,2070] }, "axis": { "title": null, "labelColor": "#888", "labelFont": "DM Mono", "grid": false, "domainColor": "#ccc", "values": [1990,2000,2010,2020,2030,2040,2050,2060,2070] } },
+        "y": { "field": "fire_days", "type": "quantitative", "title": "Catastrophic Fire Weather Days / Year", "axis": { "titleColor": "#888", "labelColor": "#888", "titleFont": "DM Mono", "labelFont": "DM Mono", "titleFontSize": 10, "grid": true, "gridColor": "#e8e0d0" } },
+        "color": { "field": "scenario", "type": "nominal", "scale": { "domain": ["Historical","High Emissions","Low Emissions"], "range": ["#aaa","#b83d10","#3d5a32"] }, "legend": { "title": "Scenario", "labelColor": "#888", "titleColor": "#888", "labelFont": "DM Mono", "orient": "top-right" } },
+        "strokeDash": { "condition": { "test": "datum.scenario !== 'Historical'", "value": [6,3] }, "value": [1,0] },
+        "tooltip": [{ "field": "year", "title": "Year" }, { "field": "scenario", "title": "Scenario" }, { "field": "fire_days", "title": "Catastrophic Fire Days" }]
+      }
+    },
+    {
+      "mark": { "type": "rule", "color": "#ccc", "strokeDash": [2,2], "strokeWidth": 1 },
+      "data": { "values": [{ "x": 2024 }] },
+      "encoding": { "x": { "field": "x", "type": "quantitative" } }
+    },
+    {
+      "mark": { "type": "text", "align": "left", "dx": 6, "dy": -10, "fontSize": 10, "font": "DM Mono", "color": "#aaa" },
+      "data": { "values": [{ "x": 2024, "y": 32, "label": "Today" }] },
+      "encoding": { "x": { "field": "x", "type": "quantitative" }, "y": { "field": "y", "type": "quantitative" }, "text": { "field": "label" } }
+    }
+  ],
+  "config": { "view": { "stroke": null } }
+}

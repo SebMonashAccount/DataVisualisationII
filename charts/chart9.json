@@ -1,0 +1,39 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container", "height": 300, "background": "transparent",
+  "data": {
+    "values": [
+      {"species":"KI Dunnart","year":2020,"pct":100},{"species":"KI Dunnart","year":2021,"pct":28},{"species":"KI Dunnart","year":2022,"pct":31},{"species":"KI Dunnart","year":2023,"pct":35},{"species":"KI Dunnart","year":2024,"pct":38},
+      {"species":"Long-footed Potoroo","year":2020,"pct":100},{"species":"Long-footed Potoroo","year":2021,"pct":45},{"species":"Long-footed Potoroo","year":2022,"pct":50},{"species":"Long-footed Potoroo","year":2023,"pct":55},{"species":"Long-footed Potoroo","year":2024,"pct":58},
+      {"species":"Greater Glider","year":2020,"pct":100},{"species":"Greater Glider","year":2021,"pct":55},{"species":"Greater Glider","year":2022,"pct":62},{"species":"Greater Glider","year":2023,"pct":70},{"species":"Greater Glider","year":2024,"pct":75},
+      {"species":"Regent Honeyeater","year":2020,"pct":100},{"species":"Regent Honeyeater","year":2021,"pct":60},{"species":"Regent Honeyeater","year":2022,"pct":65},{"species":"Regent Honeyeater","year":2023,"pct":72},{"species":"Regent Honeyeater","year":2024,"pct":78},
+      {"species":"Eastern Bristlebird","year":2020,"pct":100},{"species":"Eastern Bristlebird","year":2021,"pct":70},{"species":"Eastern Bristlebird","year":2022,"pct":78},{"species":"Eastern Bristlebird","year":2023,"pct":85},{"species":"Eastern Bristlebird","year":2024,"pct":90}
+    ]
+  },
+  "layer": [
+    {
+      "mark": { "type": "rule", "strokeDash": [5,3], "color": "#ccc", "strokeWidth": 1 },
+      "data": { "values": [{ "b": 100 }] },
+      "encoding": { "y": { "field": "b", "type": "quantitative" } }
+    },
+    {
+      "mark": { "type": "line", "strokeWidth": 2, "opacity": 0.9 },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal", "axis": { "title": null, "labelColor": "#888", "labelFont": "DM Mono", "grid": false } },
+        "y": { "field": "pct", "type": "quantitative", "title": "Population Index (pre-fire = 100)", "axis": { "titleColor": "#888", "labelColor": "#888", "titleFont": "DM Mono", "labelFont": "DM Mono", "titleFontSize": 10, "grid": true, "gridColor": "#e8e0d0" } },
+        "color": { "field": "species", "type": "nominal", "scale": { "range": ["#b83d10","#9a7820","#3d5a32","#1e4a6a","#7a6e5e"] }, "legend": { "title": "Species", "labelColor": "#888", "titleColor": "#888", "labelFont": "DM Mono", "orient": "right" } },
+        "detail": { "field": "species" },
+        "tooltip": [{ "field": "species", "title": "Species" }, { "field": "year", "title": "Year" }, { "field": "pct", "title": "Population Index" }]
+      }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 60 },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "pct", "type": "quantitative" },
+        "color": { "field": "species", "type": "nominal", "scale": { "range": ["#b83d10","#9a7820","#3d5a32","#1e4a6a","#7a6e5e"] } }
+      }
+    }
+  ],
+  "config": { "view": { "stroke": null } }
+}

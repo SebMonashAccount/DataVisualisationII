@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container", "height": 280, "background": "transparent",
+  "data": {
+    "values": [
+      {"group":"Plants","count":1278}, {"group":"Birds","count":217},
+      {"group":"Mammals","count":155}, {"group":"Reptiles","count":98},
+      {"group":"Invertebrates","count":97}, {"group":"Fish","count":82},
+      {"group":"Frogs","count":55}
+    ]
+  },
+  "mark": { "type": "arc", "innerRadius": 70, "padAngle": 0.02, "cornerRadius": 3 },
+  "encoding": {
+    "theta": { "field": "count", "type": "quantitative" },
+    "color": {
+      "field": "group", "type": "nominal",
+      "scale": { "domain": ["Plants","Birds","Mammals","Reptiles","Invertebrates","Fish","Frogs"], "range": ["#3d5a32","#9a7820","#b83d10","#7a6e5e","#5a3820","#1e4a6a","#5a8a50"] },
+      "legend": { "title": "Species Group", "labelColor": "#888", "titleColor": "#888", "labelFont": "DM Mono", "orient": "right" }
+    },
+    "tooltip": [{ "field": "group", "title": "Group" }, { "field": "count", "title": "Threatened Species" }]
+  },
+  "config": { "view": { "stroke": null } }
+}

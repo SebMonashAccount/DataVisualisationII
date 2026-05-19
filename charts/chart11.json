@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container", "height": 280, "background": "transparent",
+  "data": {
+    "values": [
+      {"year":"2000","funding":120,"new_listings":18},{"year":"2002","funding":135,"new_listings":22},
+      {"year":"2004","funding":148,"new_listings":25},{"year":"2006","funding":162,"new_listings":20},
+      {"year":"2008","funding":185,"new_listings":28},{"year":"2010","funding":198,"new_listings":24},
+      {"year":"2012","funding":210,"new_listings":30},{"year":"2014","funding":195,"new_listings":35},
+      {"year":"2016","funding":188,"new_listings":32},{"year":"2018","funding":201,"new_listings":38},
+      {"year":"2020","funding":285,"new_listings":55},{"year":"2022","funding":420,"new_listings":48},
+      {"year":"2024","funding":510,"new_listings":42}
+    ]
+  },
+  "layer": [
+    {
+      "mark": { "type": "bar", "opacity": 0.6, "color": "#1e4a6a", "cornerRadiusTopLeft": 2, "cornerRadiusTopRight": 2 },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal", "axis": { "title": null, "labelColor": "#888", "labelFont": "DM Mono", "grid": false } },
+        "y": { "field": "funding", "type": "quantitative", "title": "Funding ($M AUD)", "axis": { "titleColor": "#1e4a6a", "labelColor": "#1e4a6a", "titleFont": "DM Mono", "labelFont": "DM Mono", "titleFontSize": 10, "grid": true, "gridColor": "#e8e0d0" } }
+      }
+    },
+    {
+      "mark": { "type": "line", "color": "#b83d10", "strokeWidth": 2.5 },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "new_listings", "type": "quantitative", "title": "New Threatened Listings / Year", "axis": { "orient": "right", "titleColor": "#b83d10", "labelColor": "#b83d10", "titleFont": "DM Mono", "labelFont": "DM Mono", "titleFontSize": 10 } }
+      }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 65, "color": "#b83d10" },
+      "encoding": {
+        "x": { "field": "year", "type": "ordinal" },
+        "y": { "field": "new_listings", "type": "quantitative" },
+        "tooltip": [{ "field": "year", "title": "Year" }, { "field": "funding", "title": "Funding ($M AUD)" }, { "field": "new_listings", "title": "New Threatened Listings" }]
+      }
+    }
+  ],
+  "resolve": { "scale": { "y": "independent" } },
+  "config": { "view": { "stroke": null } }
+}

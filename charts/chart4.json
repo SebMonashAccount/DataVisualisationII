@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container", "height": 240, "background": "transparent",
+  "data": {
+    "values": [
+      {"state":"NSW","month":"Jan","ffdi":28},{"state":"NSW","month":"Feb","ffdi":24},{"state":"NSW","month":"Mar","ffdi":20},{"state":"NSW","month":"Apr","ffdi":10},{"state":"NSW","month":"May","ffdi":5},{"state":"NSW","month":"Jun","ffdi":3},{"state":"NSW","month":"Jul","ffdi":3},{"state":"NSW","month":"Aug","ffdi":5},{"state":"NSW","month":"Sep","ffdi":12},{"state":"NSW","month":"Oct","ffdi":18},{"state":"NSW","month":"Nov","ffdi":24},{"state":"NSW","month":"Dec","ffdi":28},
+      {"state":"VIC","month":"Jan","ffdi":26},{"state":"VIC","month":"Feb","ffdi":22},{"state":"VIC","month":"Mar","ffdi":16},{"state":"VIC","month":"Apr","ffdi":8},{"state":"VIC","month":"May","ffdi":4},{"state":"VIC","month":"Jun","ffdi":2},{"state":"VIC","month":"Jul","ffdi":2},{"state":"VIC","month":"Aug","ffdi":4},{"state":"VIC","month":"Sep","ffdi":10},{"state":"VIC","month":"Oct","ffdi":16},{"state":"VIC","month":"Nov","ffdi":22},{"state":"VIC","month":"Dec","ffdi":26},
+      {"state":"QLD","month":"Jan","ffdi":18},{"state":"QLD","month":"Feb","ffdi":16},{"state":"QLD","month":"Mar","ffdi":18},{"state":"QLD","month":"Apr","ffdi":14},{"state":"QLD","month":"May","ffdi":10},{"state":"QLD","month":"Jun","ffdi":8},{"state":"QLD","month":"Jul","ffdi":9},{"state":"QLD","month":"Aug","ffdi":12},{"state":"QLD","month":"Sep","ffdi":15},{"state":"QLD","month":"Oct","ffdi":16},{"state":"QLD","month":"Nov","ffdi":18},{"state":"QLD","month":"Dec","ffdi":18},
+      {"state":"SA","month":"Jan","ffdi":24},{"state":"SA","month":"Feb","ffdi":20},{"state":"SA","month":"Mar","ffdi":14},{"state":"SA","month":"Apr","ffdi":7},{"state":"SA","month":"May","ffdi":3},{"state":"SA","month":"Jun","ffdi":2},{"state":"SA","month":"Jul","ffdi":2},{"state":"SA","month":"Aug","ffdi":3},{"state":"SA","month":"Sep","ffdi":9},{"state":"SA","month":"Oct","ffdi":14},{"state":"SA","month":"Nov","ffdi":20},{"state":"SA","month":"Dec","ffdi":24},
+      {"state":"WA","month":"Jan","ffdi":20},{"state":"WA","month":"Feb","ffdi":18},{"state":"WA","month":"Mar","ffdi":14},{"state":"WA","month":"Apr","ffdi":8},{"state":"WA","month":"May","ffdi":5},{"state":"WA","month":"Jun","ffdi":4},{"state":"WA","month":"Jul","ffdi":4},{"state":"WA","month":"Aug","ffdi":6},{"state":"WA","month":"Sep","ffdi":10},{"state":"WA","month":"Oct","ffdi":14},{"state":"WA","month":"Nov","ffdi":18},{"state":"WA","month":"Dec","ffdi":20},
+      {"state":"TAS","month":"Jan","ffdi":18},{"state":"TAS","month":"Feb","ffdi":15},{"state":"TAS","month":"Mar","ffdi":10},{"state":"TAS","month":"Apr","ffdi":5},{"state":"TAS","month":"May","ffdi":3},{"state":"TAS","month":"Jun","ffdi":2},{"state":"TAS","month":"Jul","ffdi":2},{"state":"TAS","month":"Aug","ffdi":3},{"state":"TAS","month":"Sep","ffdi":7},{"state":"TAS","month":"Oct","ffdi":10},{"state":"TAS","month":"Nov","ffdi":14},{"state":"TAS","month":"Dec","ffdi":16},
+      {"state":"NT","month":"Jan","ffdi":12},{"state":"NT","month":"Feb","ffdi":10},{"state":"NT","month":"Mar","ffdi":12},{"state":"NT","month":"Apr","ffdi":15},{"state":"NT","month":"May","ffdi":18},{"state":"NT","month":"Jun","ffdi":20},{"state":"NT","month":"Jul","ffdi":22},{"state":"NT","month":"Aug","ffdi":25},{"state":"NT","month":"Sep","ffdi":22},{"state":"NT","month":"Oct","ffdi":18},{"state":"NT","month":"Nov","ffdi":14},{"state":"NT","month":"Dec","ffdi":12}
+    ]
+  },
+  "mark": { "type": "rect", "cornerRadius": 2 },
+  "encoding": {
+    "x": { "field": "month", "type": "ordinal", "sort": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"], "axis": { "title": null, "grid": false, "labelColor": "#888", "labelFont": "DM Mono", "labelFontSize": 11 } },
+    "y": { "field": "state", "type": "ordinal", "sort": ["NSW","VIC","QLD","SA","WA","TAS","NT"], "axis": { "title": null, "grid": false, "labelColor": "#888", "labelFont": "DM Mono", "labelFontSize": 11 } },
+    "color": { "field": "ffdi", "type": "quantitative", "scale": { "scheme": "orangered", "domain": [0,30] }, "legend": { "title": "Avg Dangerous Fire Days / Month", "labelColor": "#888", "titleColor": "#888", "labelFont": "DM Mono", "titleFont": "DM Mono", "orient": "bottom", "direction": "horizontal", "gradientLength": 220 } },
+    "tooltip": [{ "field": "state", "title": "State" }, { "field": "month", "title": "Month" }, { "field": "ffdi", "title": "Avg Dangerous Fire Days" }]
+  },
+  "config": { "view": { "stroke": null } }
+}

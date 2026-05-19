@@ -1,0 +1,1 @@
+{ "$schema": "https://vega.github.io/schema/vega-lite/v5.json", "description": "Chart 5 is the pictogram built in JS in index.html.", "width": 100, "height": 30, "background": "transparent", "data": { "values": [] }, "mark": "point", "encoding": {} }

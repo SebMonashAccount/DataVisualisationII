@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container", "height": 340, "background": "transparent",
+  "data": {
+    "values": [
+      {"species":"KI Dunnart","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"KI Dunnart","time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Long-footed Potoroo","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Long-footed Potoroo","time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Greater Glider","time":"Pre-Fire (2019)","status":3,"label":"Vulnerable"},
+      {"species":"Greater Glider","time":"Post-Fire (2022)","status":2,"label":"Endangered"},
+      {"species":"Leadbeater's Possum","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Leadbeater's Possum","time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Glossy Black Cockatoo","time":"Pre-Fire (2019)","status":3,"label":"Vulnerable"},
+      {"species":"Glossy Black Cockatoo","time":"Post-Fire (2022)","status":2,"label":"Endangered"},
+      {"species":"Smoky Mouse","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Smoky Mouse","time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Swift Parrot","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Swift Parrot","time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Regent Honeyeater","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Regent Honeyeater","time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Brush-tailed Rock-wallaby","time":"Pre-Fire (2019)","status":3,"label":"Vulnerable"},
+      {"species":"Brush-tailed Rock-wallaby","time":"Post-Fire (2022)","status":2,"label":"Endangered"},
+      {"species":"Eastern Bristlebird","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Eastern Bristlebird","time":"Post-Fire (2022)","status":2,"label":"Endangered"}
+    ]
+  },
+  "layer": [
+    {
+      "mark": { "type": "line", "strokeWidth": 1.8, "opacity": 0.75 },
+      "encoding": {
+        "x": { "field": "time", "type": "ordinal", "sort": ["Pre-Fire (2019)","Post-Fire (2022)"], "axis": { "title": null, "labelColor": "#888", "labelFont": "DM Mono", "labelFontSize": 12, "grid": false, "domainColor": "#ccc" } },
+        "y": { "field": "status", "type": "quantitative", "sort": "descending", "scale": { "domain": [0.5,3.5] }, "axis": { "title": null, "values": [1,2,3], "labelExpr": "datum.value===1?'Critically Endangered':datum.value===2?'Endangered':'Vulnerable'", "labelColor": "#888", "labelFont": "DM Mono", "labelFontSize": 10, "grid": true, "gridColor": "#e8e0d0", "domainColor": "transparent", "tickColor": "transparent" } },
+        "detail": { "field": "species" },
+        "color": { "condition": { "test": "datum.time==='Post-Fire (2022)' && datum.status===1", "value": "#b83d10" }, "value": "#aaa" },
+        "tooltip": [{ "field": "species", "title": "Species" }, { "field": "time", "title": "Period" }, { "field": "label", "title": "Threat Status" }]
+      }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 80 },
+      "encoding": {
+        "x": { "field": "time", "type": "ordinal", "sort": ["Pre-Fire (2019)","Post-Fire (2022)"] },
+        "y": { "field": "status", "type": "quantitative" },
+        "color": { "condition": { "test": "datum.status===1", "value": "#b83d10" }, "value": "#aaa" },
+        "tooltip": [{ "field": "species", "title": "Species" }, { "field": "label", "title": "Status" }]
+      }
+    }
+  ],
+  "config": { "view": { "stroke": null } }
+}
