@@ -1,56 +1,92 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container", "height": 300, "background": "transparent",
-  "data": {
-    "values": [
-      {"month":"Jan","month_num":1,  "fires":95,  "state":"VIC"},
-      {"month":"Feb","month_num":2,  "fires":88,  "state":"VIC"},
-      {"month":"Mar","month_num":3,  "fires":72,  "state":"VIC"},
-      {"month":"Apr","month_num":4,  "fires":28,  "state":"VIC"},
-      {"month":"May","month_num":5,  "fires":15,  "state":"VIC"},
-      {"month":"Jun","month_num":6,  "fires":8,   "state":"VIC"},
-      {"month":"Jul","month_num":7,  "fires":6,   "state":"VIC"},
-      {"month":"Aug","month_num":8,  "fires":12,  "state":"VIC"},
-      {"month":"Sep","month_num":9,  "fires":35,  "state":"VIC"},
-      {"month":"Oct","month_num":10, "fires":58,  "state":"VIC"},
-      {"month":"Nov","month_num":11, "fires":78,  "state":"VIC"},
-      {"month":"Dec","month_num":12, "fires":92,  "state":"VIC"},
-      {"month":"Jan","month_num":1,  "fires":110, "state":"NSW"},
-      {"month":"Feb","month_num":2,  "fires":98,  "state":"NSW"},
-      {"month":"Mar","month_num":3,  "fires":65,  "state":"NSW"},
-      {"month":"Apr","month_num":4,  "fires":22,  "state":"NSW"},
-      {"month":"May","month_num":5,  "fires":10,  "state":"NSW"},
-      {"month":"Jun","month_num":6,  "fires":5,   "state":"NSW"},
-      {"month":"Jul","month_num":7,  "fires":4,   "state":"NSW"},
-      {"month":"Aug","month_num":8,  "fires":9,   "state":"NSW"},
-      {"month":"Sep","month_num":9,  "fires":42,  "state":"NSW"},
-      {"month":"Oct","month_num":10, "fires":72,  "state":"NSW"},
-      {"month":"Nov","month_num":11, "fires":95,  "state":"NSW"},
-      {"month":"Dec","month_num":12, "fires":105, "state":"NSW"},
-      {"month":"Jan","month_num":1,  "fires":85,  "state":"QLD"},
-      {"month":"Feb","month_num":2,  "fires":78,  "state":"QLD"},
-      {"month":"Mar","month_num":3,  "fires":82,  "state":"QLD"},
-      {"month":"Apr","month_num":4,  "fires":65,  "state":"QLD"},
-      {"month":"May","month_num":5,  "fires":55,  "state":"QLD"},
-      {"month":"Jun","month_num":6,  "fires":48,  "state":"QLD"},
-      {"month":"Jul","month_num":7,  "fires":52,  "state":"QLD"},
-      {"month":"Aug","month_num":8,  "fires":68,  "state":"QLD"},
-      {"month":"Sep","month_num":9,  "fires":75,  "state":"QLD"},
-      {"month":"Oct","month_num":10, "fires":80,  "state":"QLD"},
-      {"month":"Nov","month_num":11, "fires":82,  "state":"QLD"},
-      {"month":"Dec","month_num":12, "fires":88,  "state":"QLD"}
-    ]
+  "title": {
+    "text": "Cumulative Fire Area by State (2016–2021)",
+    "subtitle": "Total hectares of unplanned forest fire — Source: ABARES",
+    "fontSize": 16,
+    "subtitleFontSize": 12,
+    "subtitleColor": "#888888",
+    "anchor": "start",
+    "color": "#1a1a1a",
+    "font": "Georgia, serif"
   },
-  "mark": { "type": "arc", "innerRadius": 40 },
-  "encoding": {
-    "theta": { "field": "month_num", "type": "quantitative", "stack": false, "scale": { "domain": [1, 13] } },
-    "radius": { "field": "fires", "type": "quantitative", "scale": { "rangeMin": 40 } },
-    "color": {
-      "field": "state", "type": "nominal",
-      "scale": { "domain": ["VIC","NSW","QLD"], "range": ["#b83d10","#9a7820","#3d5a32"] },
-      "legend": { "title": "State", "labelColor": "#888", "titleColor": "#888", "labelFont": "DM Mono", "orient": "bottom" }
+  "width": 700,
+  "height": 450,
+  "projection": {
+    "type": "mercator",
+    "center": [134, -28],
+    "scale": 700
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+        "format": { "type": "json", "property": "features" }
+      },
+      "transform": [
+        {
+          "lookup": "properties.STATE_NAME",
+          "from": {
+            "data": {
+              "values": [
+                { "state": "New South Wales", "fire_ha": 5820000, "label": "5.82M ha" },
+                { "state": "Victoria",        "fire_ha": 1980000, "label": "1.98M ha" },
+                { "state": "Queensland",      "fire_ha": 9100000, "label": "9.10M ha" },
+                { "state": "South Australia", "fire_ha": 480000,  "label": "480K ha"  },
+                { "state": "Western Australia","fire_ha": 12300000,"label": "12.30M ha"},
+                { "state": "Tasmania",        "fire_ha": 210000,  "label": "210K ha"  },
+                { "state": "Northern Territory","fire_ha": 16900000,"label": "16.90M ha"},
+                { "state": "Australian Capital Territory","fire_ha": 160000,"label": "160K ha"}
+              ]
+            },
+            "key": "state",
+            "fields": ["fire_ha", "label"]
+          }
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "stroke": "#ffffff",
+        "strokeWidth": 1.5
+      },
+      "encoding": {
+        "color": {
+          "field": "fire_ha",
+          "type": "quantitative",
+          "scale": {
+            "scheme": "orangered",
+            "type": "sqrt"
+          },
+          "legend": {
+            "title": "Hectares Burned",
+            "format": ",.0f",
+            "orient": "bottom-right",
+            "titleFontSize": 11,
+            "labelFontSize": 10
+          }
+        },
+        "tooltip": [
+          { "field": "properties.STATE_NAME", "title": "State / Territory" },
+          { "field": "fire_ha", "title": "Total Fire Area (ha)", "format": ",.0f" },
+          { "field": "label",   "title": "Summary" }
+        ]
+      }
     },
-    "tooltip": [{ "field": "month", "title": "Month" }, { "field": "state", "title": "State" }, { "field": "fires", "title": "Fire Events (index)" }]
-  },
-  "config": { "view": { "stroke": null } }
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+        "format": { "type": "json", "property": "features" }
+      },
+      "mark": {
+        "type": "geoshape",
+        "filled": false,
+        "stroke": "#ffffff",
+        "strokeWidth": 0.5
+      }
+    }
+  ],
+  "config": {
+    "background": "transparent",
+    "view": { "stroke": null }
+  }
 }

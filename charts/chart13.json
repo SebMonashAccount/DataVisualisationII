@@ -1,34 +1,127 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container", "height": 320, "background": "transparent",
+  "width": "container", "height": 340, "background": "transparent",
   "data": {
     "values": [
-      {"year":1990,"fire_days":18,"scenario":"Historical"},{"year":2000,"fire_days":20,"scenario":"Historical"},{"year":2010,"fire_days":22,"scenario":"Historical"},{"year":2020,"fire_days":28,"scenario":"Historical"},{"year":2024,"fire_days":32,"scenario":"Historical"},
-      {"year":2024,"fire_days":32,"scenario":"High Emissions"},{"year":2030,"fire_days":36,"scenario":"High Emissions"},{"year":2040,"fire_days":42,"scenario":"High Emissions"},{"year":2050,"fire_days":50,"scenario":"High Emissions"},{"year":2060,"fire_days":60,"scenario":"High Emissions"},{"year":2070,"fire_days":72,"scenario":"High Emissions"},
-      {"year":2024,"fire_days":32,"scenario":"Low Emissions"},{"year":2030,"fire_days":34,"scenario":"Low Emissions"},{"year":2040,"fire_days":37,"scenario":"Low Emissions"},{"year":2050,"fire_days":40,"scenario":"Low Emissions"},{"year":2060,"fire_days":42,"scenario":"Low Emissions"},{"year":2070,"fire_days":44,"scenario":"Low Emissions"}
+      {"year":1990,"fire_days":18,"scenario":"Historical"},
+      {"year":2000,"fire_days":20,"scenario":"Historical"},
+      {"year":2010,"fire_days":22,"scenario":"Historical"},
+      {"year":2020,"fire_days":28,"scenario":"Historical"},
+      {"year":2024,"fire_days":32,"scenario":"Historical"},
+      {"year":2024,"fire_days":32,"scenario":"High Emissions"},
+      {"year":2030,"fire_days":36,"scenario":"High Emissions"},
+      {"year":2040,"fire_days":42,"scenario":"High Emissions"},
+      {"year":2050,"fire_days":50,"scenario":"High Emissions"},
+      {"year":2060,"fire_days":60,"scenario":"High Emissions"},
+      {"year":2070,"fire_days":72,"scenario":"High Emissions"},
+      {"year":2024,"fire_days":32,"scenario":"Low Emissions"},
+      {"year":2030,"fire_days":34,"scenario":"Low Emissions"},
+      {"year":2040,"fire_days":37,"scenario":"Low Emissions"},
+      {"year":2050,"fire_days":40,"scenario":"Low Emissions"},
+      {"year":2060,"fire_days":42,"scenario":"Low Emissions"},
+      {"year":2070,"fire_days":44,"scenario":"Low Emissions"}
     ]
   },
+  "params": [
+    {
+      "name": "hover",
+      "select": { "type": "point", "on": "mouseover", "nearest": true, "fields": ["year"] }
+    },
+    {
+      "name": "scenarioPick",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All", "Historical", "High Emissions", "Low Emissions"],
+        "name": "Show scenario: "
+      }
+    }
+  ],
+  "transform": [
+    { "filter": "scenarioPick === 'All' || datum.scenario === scenarioPick" }
+  ],
   "layer": [
     {
-      "mark": { "type": "line", "strokeWidth": 2.5 },
+      "mark": { "type": "rect", "opacity": 0.07, "color": "#e8520a" },
+      "data": { "values": [{ "x1": 2024, "x2": 2070 }] },
       "encoding": {
-        "x": { "field": "year", "type": "quantitative", "scale": { "domain": [1990,2070] }, "axis": { "title": null, "labelColor": "#888", "labelFont": "DM Mono", "grid": false, "domainColor": "#ccc", "values": [1990,2000,2010,2020,2030,2040,2050,2060,2070] } },
-        "y": { "field": "fire_days", "type": "quantitative", "title": "Catastrophic Fire Weather Days / Year", "axis": { "titleColor": "#888", "labelColor": "#888", "titleFont": "DM Mono", "labelFont": "DM Mono", "titleFontSize": 10, "grid": true, "gridColor": "#e8e0d0" } },
-        "color": { "field": "scenario", "type": "nominal", "scale": { "domain": ["Historical","High Emissions","Low Emissions"], "range": ["#aaa","#b83d10","#3d5a32"] }, "legend": { "title": "Scenario", "labelColor": "#888", "titleColor": "#888", "labelFont": "DM Mono", "orient": "top-right" } },
-        "strokeDash": { "condition": { "test": "datum.scenario !== 'Historical'", "value": [6,3] }, "value": [1,0] },
-        "tooltip": [{ "field": "year", "title": "Year" }, { "field": "scenario", "title": "Scenario" }, { "field": "fire_days", "title": "Catastrophic Fire Days" }]
+        "x":  { "field": "x1", "type": "quantitative" },
+        "x2": { "field": "x2" }
       }
     },
     {
-      "mark": { "type": "rule", "color": "#ccc", "strokeDash": [2,2], "strokeWidth": 1 },
-      "data": { "values": [{ "x": 2024 }] },
+      "mark": { "type": "line", "strokeWidth": 2.5, "interpolate": "monotone" },
+      "encoding": {
+        "x": {
+          "field": "year", "type": "quantitative",
+          "scale": { "domain": [1990, 2070] },
+          "axis": {
+            "title": null, "labelColor": "#888", "labelFont": "DM Mono",
+            "grid": false, "domainColor": "rgba(255,255,255,.2)",
+            "values": [1990,2000,2010,2020,2030,2040,2050,2060,2070],
+            "format": "d"
+          }
+        },
+        "y": {
+          "field": "fire_days", "type": "quantitative",
+          "title": "Catastrophic Fire Weather Days / Year",
+          "axis": { "titleColor": "#888", "labelColor": "#888", "titleFont": "DM Mono", "labelFont": "DM Mono", "titleFontSize": 10, "grid": true, "gridColor": "rgba(255,255,255,.07)" }
+        },
+        "color": {
+          "field": "scenario", "type": "nominal",
+          "scale": {
+            "domain": ["Historical","High Emissions","Low Emissions"],
+            "range":  ["#888888","#e8520a","#4a8a3a"]
+          },
+          "legend": { "title": "Scenario", "labelColor": "#aaa", "titleColor": "#aaa", "labelFont": "DM Mono", "orient": "top-left", "titleFontSize": 10, "labelFontSize": 10 }
+        },
+        "strokeDash": {
+          "condition": { "test": "datum.scenario !== 'Historical'", "value": [6,3] },
+          "value": [1,0]
+        }
+      }
+    },
+    {
+      "mark": { "type": "point", "filled": true, "size": 60 },
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative" },
+        "y": { "field": "fire_days", "type": "quantitative" },
+        "color": {
+          "field": "scenario", "type": "nominal",
+          "scale": { "domain": ["Historical","High Emissions","Low Emissions"], "range": ["#888888","#e8520a","#4a8a3a"] }
+        },
+        "size": {
+          "condition": { "param": "hover", "empty": false, "value": 180 },
+          "value": 40
+        },
+        "tooltip": [
+          { "field": "year", "title": "Year", "format": "d" },
+          { "field": "scenario", "title": "Scenario" },
+          { "field": "fire_days", "title": "Catastrophic Fire Days / Year" }
+        ]
+      }
+    },
+    {
+      "mark": { "type": "rule", "color": "rgba(255,255,255,.12)", "strokeWidth": 1 },
+      "encoding": {
+        "x": { "field": "year", "type": "quantitative" },
+        "opacity": { "condition": { "param": "hover", "empty": false, "value": 1 }, "value": 0 }
+      }
+    },
+    {
+      "mark": { "type": "rule", "color": "#e8520a", "strokeDash": [3,3], "strokeWidth": 1.5 },
+      "data": { "values": [{"x": 2024}] },
       "encoding": { "x": { "field": "x", "type": "quantitative" } }
     },
     {
-      "mark": { "type": "text", "align": "left", "dx": 6, "dy": -10, "fontSize": 10, "font": "DM Mono", "color": "#aaa" },
-      "data": { "values": [{ "x": 2024, "y": 32, "label": "Today" }] },
-      "encoding": { "x": { "field": "x", "type": "quantitative" }, "y": { "field": "y", "type": "quantitative" }, "text": { "field": "label" } }
+      "mark": { "type": "text", "align": "left", "dx": 6, "dy": -10, "fontSize": 10, "font": "DM Mono", "color": "#e8520a", "fontWeight": 600 },
+      "data": { "values": [{"x": 2024, "y": 33, "label": "Today"}] },
+      "encoding": {
+        "x": { "field": "x", "type": "quantitative" },
+        "y": { "field": "y", "type": "quantitative" },
+        "text": { "field": "label" }
+      }
     }
   ],
-  "config": { "view": { "stroke": null } }
+  "config": { "background": "transparent", "view": { "stroke": null } }
 }

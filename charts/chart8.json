@@ -1,48 +1,115 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container", "height": 340, "background": "transparent",
+  "width": "container", "height": 400, "background": "transparent",
   "data": {
     "values": [
-      {"species":"KI Dunnart","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
-      {"species":"KI Dunnart","time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
-      {"species":"Long-footed Potoroo","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
-      {"species":"Long-footed Potoroo","time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
-      {"species":"Greater Glider","time":"Pre-Fire (2019)","status":3,"label":"Vulnerable"},
-      {"species":"Greater Glider","time":"Post-Fire (2022)","status":2,"label":"Endangered"},
-      {"species":"Leadbeater's Possum","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
-      {"species":"Leadbeater's Possum","time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
-      {"species":"Glossy Black Cockatoo","time":"Pre-Fire (2019)","status":3,"label":"Vulnerable"},
-      {"species":"Glossy Black Cockatoo","time":"Post-Fire (2022)","status":2,"label":"Endangered"},
-      {"species":"Smoky Mouse","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
-      {"species":"Smoky Mouse","time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
-      {"species":"Swift Parrot","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
-      {"species":"Swift Parrot","time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
-      {"species":"Regent Honeyeater","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
-      {"species":"Regent Honeyeater","time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
-      {"species":"Brush-tailed Rock-wallaby","time":"Pre-Fire (2019)","status":3,"label":"Vulnerable"},
-      {"species":"Brush-tailed Rock-wallaby","time":"Post-Fire (2022)","status":2,"label":"Endangered"},
-      {"species":"Eastern Bristlebird","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
-      {"species":"Eastern Bristlebird","time":"Post-Fire (2022)","status":2,"label":"Endangered"}
+      {"species":"KI Dunnart",               "group":"Mammal",  "time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"KI Dunnart",               "group":"Mammal",  "time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Long-footed Potoroo",      "group":"Mammal",  "time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Long-footed Potoroo",      "group":"Mammal",  "time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Greater Glider",           "group":"Mammal",  "time":"Pre-Fire (2019)","status":3,"label":"Vulnerable"},
+      {"species":"Greater Glider",           "group":"Mammal",  "time":"Post-Fire (2022)","status":2,"label":"Endangered"},
+      {"species":"Leadbeater's Possum",      "group":"Mammal",  "time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Leadbeater's Possum",      "group":"Mammal",  "time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Smoky Mouse",              "group":"Mammal",  "time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Smoky Mouse",              "group":"Mammal",  "time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Brush-tailed Rock-wallaby","group":"Mammal",  "time":"Pre-Fire (2019)","status":3,"label":"Vulnerable"},
+      {"species":"Brush-tailed Rock-wallaby","group":"Mammal",  "time":"Post-Fire (2022)","status":2,"label":"Endangered"},
+      {"species":"Eastern Pygmy Possum",     "group":"Mammal",  "time":"Pre-Fire (2019)","status":3,"label":"Vulnerable"},
+      {"species":"Eastern Pygmy Possum",     "group":"Mammal",  "time":"Post-Fire (2022)","status":2,"label":"Endangered"},
+      {"species":"Swift Parrot",             "group":"Bird",    "time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Swift Parrot",             "group":"Bird",    "time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Regent Honeyeater",        "group":"Bird",    "time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Regent Honeyeater",        "group":"Bird",    "time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Glossy Black-Cockatoo",    "group":"Bird",    "time":"Pre-Fire (2019)","status":3,"label":"Vulnerable"},
+      {"species":"Glossy Black-Cockatoo",    "group":"Bird",    "time":"Post-Fire (2022)","status":2,"label":"Endangered"},
+      {"species":"Eastern Bristlebird",      "group":"Bird",    "time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Eastern Bristlebird",      "group":"Bird",    "time":"Post-Fire (2022)","status":2,"label":"Endangered"},
+      {"species":"Gang-gang Cockatoo",       "group":"Bird",    "time":"Pre-Fire (2019)","status":3,"label":"Vulnerable"},
+      {"species":"Gang-gang Cockatoo",       "group":"Bird",    "time":"Post-Fire (2022)","status":2,"label":"Endangered"},
+      {"species":"Blue Mountains Swamp Frog","group":"Frog",    "time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Blue Mountains Swamp Frog","group":"Frog",    "time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Stuttering Frog",          "group":"Frog",    "time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Stuttering Frog",          "group":"Frog",    "time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Narrow-headed Skink",      "group":"Reptile", "time":"Pre-Fire (2019)","status":3,"label":"Vulnerable"},
+      {"species":"Narrow-headed Skink",      "group":"Reptile", "time":"Post-Fire (2022)","status":2,"label":"Endangered"},
+      {"species":"Kangaroo Island Assassin Spider","group":"Invertebrate","time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Kangaroo Island Assassin Spider","group":"Invertebrate","time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"}
     ]
   },
+  "params": [
+    {
+      "name": "groupSelect",
+      "value": "All",
+      "bind": {
+        "input": "select",
+        "options": ["All","Mammal","Bird","Frog","Reptile","Invertebrate"],
+        "labels": ["All Groups","Mammals","Birds","Frogs","Reptiles","Invertebrates"],
+        "name": "Filter by group: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "filter": "groupSelect === 'All' || datum.group === groupSelect"
+    }
+  ],
   "layer": [
     {
-      "mark": { "type": "line", "strokeWidth": 1.8, "opacity": 0.75 },
+      "mark": { "type": "line", "strokeWidth": 2, "opacity": 0.7 },
       "encoding": {
-        "x": { "field": "time", "type": "ordinal", "sort": ["Pre-Fire (2019)","Post-Fire (2022)"], "axis": { "title": null, "labelColor": "#888", "labelFont": "DM Mono", "labelFontSize": 12, "grid": false, "domainColor": "#ccc" } },
-        "y": { "field": "status", "type": "quantitative", "sort": "descending", "scale": { "domain": [0.5,3.5] }, "axis": { "title": null, "values": [1,2,3], "labelExpr": "datum.value===1?'Critically Endangered':datum.value===2?'Endangered':'Vulnerable'", "labelColor": "#888", "labelFont": "DM Mono", "labelFontSize": 10, "grid": true, "gridColor": "#e8e0d0", "domainColor": "transparent", "tickColor": "transparent" } },
+        "x": {
+          "field": "time", "type": "ordinal",
+          "sort": ["Pre-Fire (2019)","Post-Fire (2022)"],
+          "axis": { "title": null, "labelColor": "#555", "labelFont": "DM Mono", "labelFontSize": 12, "grid": false, "domainColor": "#ccc" }
+        },
+        "y": {
+          "field": "status", "type": "quantitative",
+          "scale": { "domain": [0.5, 3.5] },
+          "axis": {
+            "title": null,
+            "values": [1,2,3],
+            "labelExpr": "datum.value===1?'Critically Endangered':datum.value===2?'Endangered':'Vulnerable'",
+            "labelColor": "#555", "labelFont": "DM Mono", "labelFontSize": 11,
+            "grid": true, "gridColor": "#e8e0d0",
+            "domainColor": "transparent", "tickColor": "transparent"
+          }
+        },
         "detail": { "field": "species" },
-        "color": { "condition": { "test": "datum.time==='Post-Fire (2022)' && datum.status===1", "value": "#b83d10" }, "value": "#aaa" },
-        "tooltip": [{ "field": "species", "title": "Species" }, { "field": "time", "title": "Period" }, { "field": "label", "title": "Threat Status" }]
+        "color": {
+          "field": "group", "type": "nominal",
+          "scale": {
+            "domain": ["Mammal","Bird","Frog","Reptile","Invertebrate"],
+            "range":  ["#b83d10","#9a7820","#5a8a50","#3d5a32","#1e4a6a"]
+          },
+          "legend": { "title": "Animal Group", "labelColor": "#888", "titleColor": "#888", "labelFont": "DM Mono", "orient": "top-right" }
+        },
+        "tooltip": [
+          { "field": "species", "title": "Species" },
+          { "field": "group",   "title": "Group" },
+          { "field": "time",    "title": "Period" },
+          { "field": "label",   "title": "Threat Status" }
+        ]
       }
     },
     {
-      "mark": { "type": "point", "filled": true, "size": 80 },
+      "mark": { "type": "point", "filled": true, "size": 90 },
       "encoding": {
         "x": { "field": "time", "type": "ordinal", "sort": ["Pre-Fire (2019)","Post-Fire (2022)"] },
         "y": { "field": "status", "type": "quantitative" },
-        "color": { "condition": { "test": "datum.status===1", "value": "#b83d10" }, "value": "#aaa" },
-        "tooltip": [{ "field": "species", "title": "Species" }, { "field": "label", "title": "Status" }]
+        "color": {
+          "field": "group", "type": "nominal",
+          "scale": {
+            "domain": ["Mammal","Bird","Frog","Reptile","Invertebrate"],
+            "range":  ["#b83d10","#9a7820","#5a8a50","#3d5a32","#1e4a6a"]
+          }
+        },
+        "tooltip": [
+          { "field": "species", "title": "Species" },
+          { "field": "group",   "title": "Group" },
+          { "field": "time",    "title": "Period" },
+          { "field": "label",   "title": "Threat Status" }
+        ]
       }
     }
   ],
