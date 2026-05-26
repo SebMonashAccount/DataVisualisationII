@@ -1,90 +1,68 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "title": {
-    "text": "Cumulative Fire Area by State (2016–2021)",
-    "subtitle": "Total hectares of unplanned forest fire — Source: ABARES",
-    "fontSize": 16,
-    "subtitleFontSize": 12,
-    "subtitleColor": "#888888",
-    "anchor": "start",
-    "color": "#1a1a1a",
-    "font": "Georgia, serif"
-  },
-  "width": 700,
+  "width": "container",
   "height": 450,
+  "background": "transparent",
   "projection": {
     "type": "mercator",
     "center": [134, -28],
     "scale": 700
   },
-  "layer": [
+  "data": {
+    "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
+    "format": { "type": "json", "property": "features" }
+  },
+  "transform": [
     {
-      "data": {
-        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
-        "format": { "type": "json", "property": "features" }
-      },
-      "transform": [
-        {
-          "lookup": "properties.STATE_NAME",
-          "from": {
-            "data": {
-              "values": [
-                { "state": "New South Wales", "fire_ha": 5820000, "label": "5.82M ha" },
-                { "state": "Victoria",        "fire_ha": 1980000, "label": "1.98M ha" },
-                { "state": "Queensland",      "fire_ha": 9100000, "label": "9.10M ha" },
-                { "state": "South Australia", "fire_ha": 480000,  "label": "480K ha"  },
-                { "state": "Western Australia","fire_ha": 12300000,"label": "12.30M ha"},
-                { "state": "Tasmania",        "fire_ha": 210000,  "label": "210K ha"  },
-                { "state": "Northern Territory","fire_ha": 16900000,"label": "16.90M ha"},
-                { "state": "Australian Capital Territory","fire_ha": 160000,"label": "160K ha"}
-              ]
-            },
-            "key": "state",
-            "fields": ["fire_ha", "label"]
-          }
-        }
-      ],
-      "mark": {
-        "type": "geoshape",
-        "stroke": "#ffffff",
-        "strokeWidth": 1.5
-      },
-      "encoding": {
-        "color": {
-          "field": "fire_ha",
-          "type": "quantitative",
-          "scale": {
-            "scheme": "orangered",
-            "type": "sqrt"
-          },
-          "legend": {
-            "title": "Hectares Burned",
-            "format": ",.0f",
-            "orient": "bottom-right",
-            "titleFontSize": 11,
-            "labelFontSize": 10
-          }
+      "lookup": "properties.STATE_NAME",
+      "from": {
+        "data": {
+          "values": [
+            { "state": "New South Wales",              "fire_ha": 5820000,  "label": "5.82M ha" },
+            { "state": "Victoria",                     "fire_ha": 1980000,  "label": "1.98M ha" },
+            { "state": "Queensland",                   "fire_ha": 9100000,  "label": "9.10M ha" },
+            { "state": "South Australia",              "fire_ha": 480000,   "label": "480K ha"  },
+            { "state": "Western Australia",            "fire_ha": 12300000, "label": "12.30M ha"},
+            { "state": "Tasmania",                     "fire_ha": 210000,   "label": "210K ha"  },
+            { "state": "Northern Territory",           "fire_ha": 16900000, "label": "16.90M ha"},
+            { "state": "Australian Capital Territory", "fire_ha": 160000,   "label": "160K ha"  }
+          ]
         },
-        "tooltip": [
-          { "field": "properties.STATE_NAME", "title": "State / Territory" },
-          { "field": "fire_ha", "title": "Total Fire Area (ha)", "format": ",.0f" },
-          { "field": "label",   "title": "Summary" }
-        ]
-      }
-    },
-    {
-      "data": {
-        "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
-        "format": { "type": "json", "property": "features" }
-      },
-      "mark": {
-        "type": "geoshape",
-        "filled": false,
-        "stroke": "#ffffff",
-        "strokeWidth": 0.5
+        "key": "state",
+        "fields": ["fire_ha", "label"]
       }
     }
   ],
+  "mark": {
+    "type": "geoshape",
+    "stroke": "rgba(255,255,255,0.3)",
+    "strokeWidth": 1.2
+  },
+  "encoding": {
+    "color": {
+      "field": "fire_ha",
+      "type": "quantitative",
+      "scale": { "scheme": "orangered", "type": "sqrt" },
+      "legend": {
+        "title": "Hectares Burned",
+        "format": ",.0f",
+        "orient": "bottom-right",
+        "titleFontSize": 10,
+        "labelFontSize": 9,
+        "titleColor": "#ccc",
+        "labelColor": "#ccc",
+        "titleFont": "DM Mono, monospace",
+        "labelFont": "DM Mono, monospace",
+        "gradientLength": 160,
+        "gradientThickness": 8
+      }
+    },
+    "tooltip": [
+      { "field": "properties.STATE_NAME", "title": "State / Territory" },
+      { "field": "fire_ha",               "title": "Total Fire Area (ha)", "format": ",.0f" },
+      { "field": "label",                 "title": "Summary" }
+    ]
+  },
   "config": {
     "background": "transparent",
     "view": { "stroke": null }

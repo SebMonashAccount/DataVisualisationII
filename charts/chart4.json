@@ -1,6 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container", "height": 240, "background": "transparent",
+  "width": "container",
+  "height": 240,
+  "background": "transparent",
   "data": {
     "values": [
       {"state":"NSW","month":"Jan","ffdi":28},{"state":"NSW","month":"Feb","ffdi":24},{"state":"NSW","month":"Mar","ffdi":20},{"state":"NSW","month":"Apr","ffdi":10},{"state":"NSW","month":"May","ffdi":5},{"state":"NSW","month":"Jun","ffdi":3},{"state":"NSW","month":"Jul","ffdi":3},{"state":"NSW","month":"Aug","ffdi":5},{"state":"NSW","month":"Sep","ffdi":12},{"state":"NSW","month":"Oct","ffdi":18},{"state":"NSW","month":"Nov","ffdi":24},{"state":"NSW","month":"Dec","ffdi":28},
@@ -14,10 +16,39 @@
   },
   "mark": { "type": "rect", "cornerRadius": 2 },
   "encoding": {
-    "x": { "field": "month", "type": "ordinal", "sort": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"], "axis": { "title": null, "grid": false, "labelColor": "#888", "labelFont": "DM Mono", "labelFontSize": 11 } },
-    "y": { "field": "state", "type": "ordinal", "sort": ["NSW","VIC","QLD","SA","WA","TAS","NT"], "axis": { "title": null, "grid": false, "labelColor": "#888", "labelFont": "DM Mono", "labelFontSize": 11 } },
-    "color": { "field": "ffdi", "type": "quantitative", "scale": { "scheme": "orangered", "domain": [0,30] }, "legend": { "title": "Avg Dangerous Fire Days / Month", "labelColor": "#888", "titleColor": "#888", "labelFont": "DM Mono", "titleFont": "DM Mono", "orient": "bottom", "direction": "horizontal", "gradientLength": 220 } },
-    "tooltip": [{ "field": "state", "title": "State" }, { "field": "month", "title": "Month" }, { "field": "ffdi", "title": "Avg Dangerous Fire Days" }]
+    "x": {
+      "field": "month", "type": "ordinal",
+      "sort": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+      "axis": {
+        "title": null, "grid": false,
+        "labelColor": "#aaa", "labelFont": "DM Mono", "labelFontSize": 11
+      }
+    },
+    "y": {
+      "field": "state", "type": "ordinal",
+      "sort": ["NSW","VIC","QLD","SA","WA","TAS","NT"],
+      "axis": {
+        "title": null, "grid": false,
+        "labelColor": "#aaa", "labelFont": "DM Mono", "labelFontSize": 11
+      }
+    },
+    "color": {
+      "field": "ffdi", "type": "quantitative",
+      "scale": { "scheme": "orangered", "domain": [0, 30] },
+      "legend": {
+        "title": "Avg Dangerous Fire Days / Month",
+        "labelColor": "#aaa", "titleColor": "#ccc",
+        "labelFont": "DM Mono", "titleFont": "DM Mono",
+        "orient": "bottom", "direction": "horizontal",
+        "gradientLength": 220, "gradientThickness": 8,
+        "titleFontSize": 10, "labelFontSize": 9
+      }
+    },
+    "tooltip": [
+      { "field": "state", "title": "State" },
+      { "field": "month", "title": "Month" },
+      { "field": "ffdi",  "title": "Avg Dangerous Fire Days" }
+    ]
   },
-  "config": { "view": { "stroke": null } }
+  "config": { "background": "transparent", "view": { "stroke": null } }
 }

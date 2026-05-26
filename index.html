@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,321 +10,426 @@
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
+
 <body>
 
-<nav id="main-nav">
-  <a href="#top" class="logo">Australia's <span>Bushfire Problem</span></a>
-  <ul>
-    <li><a href="#act1">The Fire</a></li>
-    <li><a href="#act2">The Collision</a></li>
-    <li><a href="#act3">The Aftermath</a></li>
-  </ul>
-</nav>
+  <nav id="main-nav">
+    <a href="#top" class="logo">Australia's <span>Bushfire Problem</span></a>
+    <ul>
+      <li><a href="#act1">The Fire</a></li>
+      <li><a href="#act2">The Collision</a></li>
+      <li><a href="#act3">The Aftermath</a></li>
+    </ul>
+  </nav>
 
-<!-- HERO — BLACK -->
-<section class="hero zone-black" id="top">
-  <div class="hero-inner">
-    <p class="hero-eyebrow">A data visualisation &mdash; Australia's ecological emergency</p>
-    <h1>Australia's<br>Bushfire<br>Problem</h1>
-    <p class="hero-sub">How a continent on fire is pushing its wildlife to the brink of extinction &mdash; and why the worst is still ahead.</p>
-    <div class="hero-stats">
-      <div class="hero-stat">
-        <span class="hero-stat-n">24M</span>
-        <span class="hero-stat-l">Hectares burned<br>in Black Summer</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-n">3B</span>
-        <span class="hero-stat-l">Animals killed<br>or displaced</span>
-      </div>
-      <div class="hero-stat">
-        <span class="hero-stat-n">1,700+</span>
-        <span class="hero-stat-l">Species currently<br>threatened</span>
-      </div>
-    </div>
-    
-  </div>
-</section>
-
-<!-- ACT I — DARK CHARCOAL -->
-<section id="act1" class="act-intro zone-charcoal wrap">
-  <div class="act-number">01</div>
-  <h2 class="act-heading">The Fire</h2>
-  <p class="act-lead">Australia has always burned. But something fundamental has changed &mdash; fires are growing bigger, hotter, and arriving earlier with every decade. This is not a natural cycle. This is acceleration.</p>
-</section>
-
-<main class="zone-charcoal wrap wrap--flush">
-
-  <section class="card">
-    <p class="card-tag">Chart 01 &mdash; Historical Fire Extent</p>
-    <h3 class="card-title">Total Area Burned Across Australia, 1999&ndash;2024</h3>
-    <div id="chart1" class="chart-holder"></div>
-    <p class="card-caption">The 2019&ndash;20 Black Summer dwarfs all previous seasons on record, burning more than double any prior year. The 2023&ndash;24 season eclipsed even that figure, driven by record-breaking heat and drought across northern and western Australia.</p>
-    <p class="card-source">Source: <a href="https://www.agriculture.gov.au/abares/forestsaustralia/forest-data-maps-and-tools/forest-fire-data" target="_blank" rel="noopener">ABARES / DAFF Forest Fire Area Data</a>; <a href="https://www.afac.com.au/initiative/national-situation-reports" target="_blank" rel="noopener">AFAC Annual Season Reviews</a></p>
-  </section>
-
-  <section class="card">
-    <p class="card-tag">Chart 02 &mdash; Fire Footprint Map</p>
-    <h3 class="card-title">Where Australia Burns: Cumulative Fire Area by State (2016&ndash;2021)</h3>
-    <div id="chart2" class="chart-holder chart-holder--map"></div>
-    <p class="card-caption">The Northern Territory and Western Australia carry the largest burned area through annual savanna fire. But it is the concentrated fires of NSW and Victoria &mdash; tearing through ecologically rich temperate forests &mdash; that caused the most catastrophic biodiversity impact during Black Summer.</p>
-    <p class="card-source">Source: <a href="https://www.agriculture.gov.au/abares/forestsaustralia/forest-data-maps-and-tools/data-by-topic/fire" target="_blank" rel="noopener">ABARES Forest Fire Area Data 2016&ndash;2021</a></p>
-  </section>
-
-  <section class="card">
-    <p class="card-tag">Chart 03 &mdash; Climate Drivers</p>
-    <h3 class="card-title">The Acceleration: Temperature, Rainfall &amp; Fire Across 25 Fire Seasons</h3>
-    <div id="chart3" class="chart-holder"></div>
-    <p class="card-caption">Each point is one fire season traced chronologically. As temperature anomalies rise and rainfall deficits deepen, area burned surges. Black Summer sits at the extreme end of every axis &mdash; a convergence of every climate driver simultaneously reaching record levels.</p>
-    <p class="card-source">Source: <a href="http://www.bom.gov.au/climate/data/" target="_blank" rel="noopener">Bureau of Meteorology &mdash; Climate Data</a>; <a href="https://www.agriculture.gov.au/abares/forestsaustralia/forest-data-maps-and-tools/forest-fire-data" target="_blank" rel="noopener">ABARES fire records</a></p>
-  </section>
-
-  <section class="card">
-    <p class="card-tag">Chart 04 &mdash; Fire Danger Index</p>
-    <h3 class="card-title">Dangerous Fire Weather Days by State and Month (2000&ndash;2024 Average)</h3>
-    <div id="chart4" class="chart-holder"></div>
-    <p class="card-caption">The Forest Fire Danger Index combines temperature, humidity, wind speed and drought into a single risk measure. The Northern Territory burns year-round through tropical savanna; southern states face compressed but intensifying summer peaks growing more extreme each decade.</p>
-    <p class="card-source">Source: <a href="http://www.bom.gov.au/jsp/ncc/climate_averages/fire-danger/index.jsp" target="_blank" rel="noopener">Bureau of Meteorology &mdash; FFDI records 2000&ndash;2024</a></p>
-  </section>
-
-</main>
-
-<div class="transition-band zone-transition">
-  <div class="wrap">
-    <p class="transition-text">&ldquo;It wasn&rsquo;t just a fire season. It was a reckoning.&rdquo;</p>
-  </div>
-</div>
-
-<!-- ACT II — EMBER ORANGE -->
-<section id="act2" class="act-intro zone-ember wrap">
-  <div class="act-number">02</div>
-  <h2 class="act-heading">The Collision</h2>
-  <p class="act-lead">Australia is already the world&rsquo;s worst nation for mammal extinctions. Then Black Summer came &mdash; and burned straight through the habitats of species already on the edge. The fire didn&rsquo;t just destroy land. It destroyed futures.</p>
-</section>
-
-<main class="zone-ember wrap wrap--flush">
-
-  <section class="card">
-    <div class="grid-2-1">
-      <div>
-        <p class="card-tag">Chart 05 &mdash; Animal Impact</p>
-        <h3 class="card-title">3 Billion Animals: The Toll of Black Summer</h3>
-        <p class="card-caption">Each dot represents approximately 10 million animals killed or displaced. Click a group in the legend to highlight.</p>
-        <div class="pict-grid" id="pictogram"></div>
-        <div class="pict-legend" id="pict-legend-controls">
-          <div class="pict-legend-item active" data-group="all"><div class="pict-legend-dot" style="background:rgba(255,255,255,.3)"></div>All</div>
-          <div class="pict-legend-item" data-group="dot-mammal"><div class="pict-legend-dot dot-mammal"></div>Mammals</div>
-          <div class="pict-legend-item" data-group="dot-bird"><div class="pict-legend-dot dot-bird"></div>Birds</div>
-          <div class="pict-legend-item" data-group="dot-reptile"><div class="pict-legend-dot dot-reptile"></div>Reptiles</div>
-          <div class="pict-legend-item" data-group="dot-frog"><div class="pict-legend-dot dot-frog"></div>Frogs</div>
-          <div class="pict-legend-item" data-group="dot-insect"><div class="pict-legend-dot dot-insect"></div>Invertebrates</div>
+  <!-- HERO — BLACK -->
+  <section class="hero zone-black" id="top">
+    <div class="hero-inner">
+      <p class="hero-eyebrow">A data visualisation &mdash; Australia's ecological emergency</p>
+      <h1>Australia's<br>Bushfire<br>Problem</h1>
+      <p class="hero-sub">How a continent on fire is pushing its wildlife to the brink of extinction &mdash; and why the
+        worst is still ahead.</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="hero-stat-n">24M</span>
+          <span class="hero-stat-l">Hectares burned<br>in Black Summer</span>
         </div>
-        <p class="card-caption">WWF Australia estimated 3 billion vertebrates were killed, injured, or forcibly displaced by the 2019&ndash;20 fires &mdash; the largest documented wildlife disaster in modern history.</p>
-        <p class="card-source">Source: <a href="https://www.wwf.org.au/news/news/2020/3-billion-animals-impacted-by-australia-s-bushfire-crisis" target="_blank" rel="noopener">WWF Australia (2020) &mdash; 3 Billion Animals Report</a></p>
+        <div class="hero-stat">
+          <span class="hero-stat-n">3B</span>
+          <span class="hero-stat-l">Animals killed<br>or displaced</span>
+        </div>
+        <div class="hero-stat">
+          <span class="hero-stat-n">1,700+</span>
+          <span class="hero-stat-l">Species currently<br>threatened</span>
+        </div>
       </div>
-      <aside>
-        <div class="stat-block"><span class="stat-n">34</span><div class="stat-u">Species</div><div class="stat-d">newly added to Australia's threatened species list as a direct result of Black Summer</div></div>
-        <div class="stat-block"><span class="stat-n">49%</span><div class="stat-u">of Land</div><div class="stat-d">of Kangaroo Island burned in a single season &mdash; home to species found nowhere else on Earth</div></div>
-        <div class="stat-block"><span class="stat-n">80%</span><div class="stat-u">of Area</div><div class="stat-d">of the Greater Blue Mountains World Heritage Area was burnt</div></div>
-      </aside>
+
     </div>
   </section>
 
-  <section class="card">
-    <p class="card-tag">Chart 06 &mdash; Species at Risk by State</p>
-    <h3 class="card-title">Threatened Species Count vs Fire Habitat Overlap</h3>
-    <div id="chart6" class="chart-holder"></div>
-    <p class="card-caption">NSW and QLD host the most threatened species and were the worst fire-affected states. Bar colour shows what percentage of each state's critical habitat overlapped the 2019&ndash;20 fire footprint.</p>
-    <p class="card-source">Source: <a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/lists" target="_blank" rel="noopener">DCCEEW &mdash; EPBC Act Threatened Species List 2024</a></p>
+  <!-- ACT I — DARK CHARCOAL -->
+  <section id="act1" class="act-intro zone-charcoal wrap">
+    <div class="act-number">01</div>
+    <h2 class="act-heading">The Fire</h2>
+    <p class="act-lead">Australia has always burned. But something fundamental has changed &mdash; fires are growing
+      bigger, hotter, and arriving earlier with every decade. This is not a natural cycle. This is acceleration.</p>
   </section>
 
-  <section class="card">
-    <p class="card-tag">Chart 07 &mdash; Threatened Species Map</p>
-    <h3 class="card-title">Australia's Biodiversity Crisis: EPBC-Listed Threatened Species by State</h3>
-    <div id="chart7" class="chart-holder chart-holder--map"></div>
-    <p class="card-caption">Queensland and New South Wales are home to the greatest concentration of threatened species in Australia. Hover over each state to see the breakdown of Critically Endangered, Endangered and Vulnerable species.</p>
-    <p class="card-source">Source: <a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/lists" target="_blank" rel="noopener">DCCEEW &mdash; EPBC Act Threatened Species List 2024</a>; <a href="https://www.iucnredlist.org" target="_blank" rel="noopener">IUCN Red List</a></p>
-  </section>
+  <main class="zone-charcoal wrap wrap--flush">
 
-  <section class="card">
-    <p class="card-tag">Chart 08 &mdash; Escalating Risk</p>
-    <h3 class="card-title">How Black Summer Changed the Threat Status of Key Species</h3>
-    <div id="chart8" class="chart-holder"></div>
-    <p class="card-caption">After Black Summer, 16 species across five taxonomic groups were formally uplisted to higher threat categories under the EPBC Act. Each line is a species. Each downward slope is a step closer to extinction. Use the filter to explore by group.</p>
-    <p class="card-source">Source: <a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/lists" target="_blank" rel="noopener">DCCEEW</a> / <a href="https://www.iucnredlist.org" target="_blank" rel="noopener">IUCN Red List</a> &mdash; post-fire species assessments 2020&ndash;2022</p>
-  </section>
+    <section class="card">
+      <p class="card-tag">Chart 01 &mdash; Historical Fire Extent</p>
+      <h3 class="card-title">Total Area Burned Across Australia, 1999&ndash;2024</h3>
+      <div id="chart1" class="chart-holder"></div>
+      <p class="card-caption">The 2019&ndash;20 Black Summer dwarfs all previous seasons on record, burning more than
+        double any prior year. The 2023&ndash;24 season eclipsed even that figure, driven by record-breaking heat and
+        drought across northern and western Australia.</p>
+      <p class="card-source">Source: <a
+          href="https://www.agriculture.gov.au/abares/forestsaustralia/forest-data-maps-and-tools/forest-fire-data"
+          target="_blank" rel="noopener">ABARES / DAFF Forest Fire Area Data</a>; <a
+          href="https://www.afac.com.au/initiative/national-situation-reports" target="_blank" rel="noopener">AFAC
+          Annual Season Reviews</a></p>
+    </section>
 
-</main>
+    <section class="card">
+      <p class="card-tag">Chart 02 &mdash; Fire Footprint Map</p>
+      <h3 class="card-title">Where Australia Burns: Cumulative Fire Area by State (2016&ndash;2021)</h3>
+      <div id="chart2" class="chart-holder chart-holder--map"></div>
+      <p class="card-caption">The Northern Territory and Western Australia carry the largest burned area through annual
+        savanna fire. But it is the concentrated fires of NSW and Victoria &mdash; tearing through ecologically rich
+        temperate forests &mdash; that caused the most catastrophic biodiversity impact during Black Summer.</p>
+      <p class="card-source">Source: <a
+          href="https://www.agriculture.gov.au/abares/forestsaustralia/forest-data-maps-and-tools/data-by-topic/fire"
+          target="_blank" rel="noopener">ABARES Forest Fire Area Data 2016&ndash;2021</a></p>
+    </section>
 
-<div class="transition-band zone-transition-2">
-  <div class="wrap">
-    <p class="transition-text">&ldquo;Five years on. The fires are out. The damage is not.&rdquo;</p>
-  </div>
-</div>
+    <section class="card">
+      <p class="card-tag">Chart 03 &mdash; Climate Drivers</p>
+      <h3 class="card-title">The Acceleration: Temperature, Rainfall &amp; Fire Across 25 Fire Seasons</h3>
+      <div id="chart3" class="chart-holder"></div>
+      <p class="card-caption">Each point is one fire season traced chronologically. As temperature anomalies rise and
+        rainfall deficits deepen, area burned surges. Black Summer sits at the extreme end of every axis &mdash; a
+        convergence of every climate driver simultaneously reaching record levels.</p>
+      <p class="card-source">Source: <a href="http://www.bom.gov.au/climate/data/" target="_blank" rel="noopener">Bureau
+          of Meteorology &mdash; Climate Data</a>; <a
+          href="https://www.agriculture.gov.au/abares/forestsaustralia/forest-data-maps-and-tools/forest-fire-data"
+          target="_blank" rel="noopener">ABARES fire records</a></p>
+    </section>
 
-<!-- ACT III — DEEP RED -->
-<section id="act3" class="act-intro zone-red wrap">
-  <div class="act-number">03</div>
-  <h2 class="act-heading">The Aftermath</h2>
-  <p class="act-lead">Some ecosystems are beginning to recover. Others will not. And the climate models are unambiguous &mdash; unless emissions trajectories change dramatically, fire seasons like 2019&ndash;20 will become the new normal.</p>
-</section>
+    <section class="card">
+      <p class="card-tag">Chart 04 &mdash; Fire Danger Index</p>
+      <h3 class="card-title">Dangerous Fire Weather Days by State and Month (2000&ndash;2024 Average)</h3>
+      <div id="chart4" class="chart-holder"></div>
+      <p class="card-caption">The Forest Fire Danger Index combines temperature, humidity, wind speed and drought into a
+        single risk measure. The Northern Territory burns year-round through tropical savanna; southern states face
+        compressed but intensifying summer peaks growing more extreme each decade.</p>
+      <p class="card-source">Source: <a href="http://www.bom.gov.au/jsp/ncc/climate_averages/fire-danger/index.jsp"
+          target="_blank" rel="noopener">Bureau of Meteorology &mdash; FFDI records 2000&ndash;2024</a></p>
+    </section>
 
-<main class="zone-red wrap wrap--flush">
+  </main>
 
-  <section class="card">
-    <p class="card-tag">Chart 09 &mdash; Species Recovery</p>
-    <h3 class="card-title">Population Recovery Trajectory: Key Species Post&ndash;Black Summer (2020&ndash;2024)</h3>
-    <div id="chart9" class="chart-holder"></div>
-    <p class="card-caption">Recovery is deeply uneven across affected species. Some are rebounding. Others remain critically below pre-fire population levels five years on.</p>
-    <p class="card-source">Source: <a href="https://www.dcceew.gov.au/environment/biodiversity/threatened" target="_blank" rel="noopener">DCCEEW Species Recovery Plans</a>; <a href="https://www.wwf.org.au" target="_blank" rel="noopener">WWF Australia post-fire monitoring reports</a></p>
-  </section>
-
-  <section class="card">
-    <p class="card-tag">Chart 10 &mdash; Habitat Loss</p>
-    <h3 class="card-title">Cumulative Forest &amp; Woodland Loss by State (1990&ndash;2023)</h3>
-    <div id="chart10" class="chart-holder"></div>
-    <p class="card-caption">Decades of land clearing combined with accelerating fire has pushed habitat loss to critical levels in every state. The curves show no sign of flattening.</p>
-    <p class="card-source">Source: <a href="https://www.agriculture.gov.au/abares/forestsaustralia" target="_blank" rel="noopener">ABARES &mdash; Australia's State of the Forests Report 2023</a></p>
-  </section>
-
-  <section class="card">
-    <p class="card-tag">Chart 11 &mdash; Funding vs Extinction Rate</p>
-    <h3 class="card-title">Is Conservation Funding Making a Difference?</h3>
-    <div id="chart11" class="chart-holder"></div>
-    <p class="card-caption">Despite tripling conservation funding after Black Summer, the threatened species list continues to grow. Money alone cannot reverse the scale of what was lost &mdash; or what the climate will keep taking.</p>
-    <p class="card-source">Source: <a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/lists" target="_blank" rel="noopener">DCCEEW Budget Statements / EPBC Act Threatened Species List historical data</a></p>
-  </section>
-
-  <section class="card">
-    <p class="card-tag">Chart 12 &mdash; Fire Eras</p>
-    <h3 class="card-title">Fire Footprint by State Across Five Fire Eras</h3>
-    <div id="chart12" class="chart-holder"></div>
-    <p class="card-caption">Black Summer was defined by an unprecedented concentration of fire in the ecologically rich south-east &mdash; a region that had burned relatively little in prior decades. The pattern is shifting southward as the climate dries.</p>
-    <p class="card-source">Source: <a href="https://www.agriculture.gov.au/abares/forestsaustralia/forest-data-maps-and-tools/forest-fire-data" target="_blank" rel="noopener">ABARES / DAFF fire extent data</a>; <a href="https://www.afac.com.au/initiative/national-situation-reports" target="_blank" rel="noopener">AFAC Annual Season Reviews 2000&ndash;2024</a></p>
-  </section>
-
-  <section class="card">
-    <p class="card-tag">Chart 13 &mdash; Projections</p>
-    <h3 class="card-title">Projected Catastrophic Fire Weather Days to 2070</h3>
-    <div id="chart13" class="chart-holder"></div>
-    <p class="card-caption">Under high emissions, catastrophic fire weather days more than double by 2070. Under low emissions, the increase is still significant &mdash; but manageable. The gap between these lines represents the cost of inaction, measured in fire seasons. Toggle the checkboxes to compare scenarios.</p>
-    <p class="card-source">Source: <a href="https://www.csiro.au/en/research/natural-environment/climate/state-of-the-climate" target="_blank" rel="noopener">CSIRO &amp; BOM &mdash; State of the Climate 2022</a>; Climate Council of Australia projections</p>
-  </section>
-
-  <section class="card">
-    <p class="card-tag">Chart 14 &mdash; Projected Fire Risk Map</p>
-    <h3 class="card-title">Australia in 2070: Projected Fire Risk Under High Emissions</h3>
-    <div id="chart14" class="chart-holder chart-holder--map"></div>
-    <p class="card-caption">Under high emissions scenarios, CSIRO modelling projects dramatically increased fire risk across southern and eastern Australia by 2070. States that have historically experienced moderate fire pressure &mdash; Victoria, NSW, and South Australia &mdash; face the steepest relative increases. The north remains extreme; the south catches up. Hover over each state to see the projected risk index.</p>
-    <p class="card-source">Source: <a href="https://www.csiro.au/en/research/natural-environment/climate/state-of-the-climate" target="_blank" rel="noopener">CSIRO &amp; BOM &mdash; State of the Climate 2022</a>; <a href="https://www.climatecouncil.org.au" target="_blank" rel="noopener">Climate Council of Australia</a></p>
-  </section>
-
-</main>
-
-<div class="closing zone-closing">
-  <div class="wrap">
-    <p class="closing-text">Australia has lost more mammal species to extinction than any other country on Earth.<br>Black Summer accelerated a crisis already decades in the making.<br><strong>The question is no longer whether it will happen again. It is how bad it will be.</strong></p>
-  </div>
-</div>
-
-<footer>
-  <div class="footer-inner wrap">
-    <div>
-      <h4>Data Sources</h4>
-      <ul>
-        <li><a href="https://www.agriculture.gov.au/abares/forestsaustralia/forest-data-maps-and-tools/forest-fire-data" target="_blank" rel="noopener">ABARES / DAFF &mdash; Forest Fire Area Data</a></li>
-        <li><a href="http://www.bom.gov.au/climate/data/" target="_blank" rel="noopener">Bureau of Meteorology &mdash; Climate &amp; FFDI Records</a></li>
-        <li><a href="https://www.afac.com.au/initiative/national-situation-reports" target="_blank" rel="noopener">AFAC &mdash; Annual Bushfire Season Reviews</a></li>
-        <li><a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/lists" target="_blank" rel="noopener">DCCEEW &mdash; EPBC Act Threatened Species List</a></li>
-        <li><a href="https://www.wwf.org.au/news/news/2020/3-billion-animals-impacted-by-australia-s-bushfire-crisis" target="_blank" rel="noopener">WWF Australia &mdash; 3 Billion Animals Report</a></li>
-        <li><a href="https://www.iucnredlist.org" target="_blank" rel="noopener">IUCN Red List &mdash; Species Threat Assessments</a></li>
-        <li><a href="https://www.ala.org.au" target="_blank" rel="noopener">Atlas of Living Australia &mdash; Species Records</a></li>
-        <li><a href="https://www.csiro.au/en/research/natural-environment/climate/state-of-the-climate" target="_blank" rel="noopener">CSIRO &amp; BOM &mdash; State of the Climate 2022</a></li>
-      </ul>
-    </div>
-    <div>
-      <h4>About</h4>
-      <p>Built using Vega-Lite 5, HTML5, and CSS3. All charts are stored as separate JSON files embedded via Vega Embed. Growing up in rural Victoria with fires burning directly across the street &mdash; this is a story lived as much as researched.</p>
-      <p style="margin-top:1rem;opacity:.5;font-size:.82rem;">FIT2179 Data Visualisation 2 &mdash; University of Melbourne</p>
+  <div class="transition-band zone-transition">
+    <div class="wrap" style="text-align:center;">
+      <p class="transition-text">&ldquo;It wasn&rsquo;t just a fire season. It was a reckoning.&rdquo;</p>
+      <p class="transition-cite">Prof. Andy Pitman, ARC Centre of Excellence for Climate Extremes &mdash; on the conditions that defined Act I: fire weather so extreme it had no historical precedent in Australia.</p>
     </div>
   </div>
-</footer>
 
-<script>
-  const nav = document.getElementById('main-nav');
-  window.addEventListener('scroll', () => {
-    const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
-    if (pct < 0.33) {
-      nav.style.background = '#0d0d0d';
-    } else if (pct < 0.66) {
-      const t = (pct - 0.33) / 0.33;
-      const r = Math.round(13 + t * (167));
-      const g = Math.round(13 + t * (47));
-      const b = Math.round(13 - t * (3));
-      nav.style.background = `rgb(${r},${g},${b})`;
-    } else {
-      const t = (pct - 0.66) / 0.34;
-      const r = Math.round(180 - t * 40);
-      const g = Math.round(60 - t * 40);
-      const b = 10;
-      nav.style.background = `rgb(${r},${g},${b})`;
-    }
-  });
+  <!-- ACT II — EMBER ORANGE -->
+  <section id="act2" class="act-intro zone-ember wrap">
+    <div class="act-number">02</div>
+    <h2 class="act-heading">The Collision</h2>
+    <p class="act-lead">Australia is already the world&rsquo;s worst nation for mammal extinctions. Then Black Summer
+      came &mdash; and burned straight through the habitats of species already on the edge. The fire didn&rsquo;t just
+      destroy land. It destroyed futures.</p>
+  </section>
 
-  const opts = { actions: false, renderer: 'svg' };
-  const charts = [1,2,3,4,6,7,8,9,10,11,12,13,14];
-  charts.forEach(n => {
-    vegaEmbed(`#chart${n}`, `charts/chart${n}.json`, opts).catch(err => {
-      const el = document.querySelector(`#chart${n}`);
-      if (el) el.innerHTML = `<p style="color:#ff6b3d;font-weight:700;padding:1rem;">Chart ${n} could not load.</p>`;
-    });
-  });
+  <main class="zone-ember wrap wrap--flush">
 
-  (function () {
-    const el = document.getElementById('pictogram');
-    const groups = [
-      { cls: 'dot-mammal',  label: 'Mammals',      total: '143 million',  dots: 14  },
-      { cls: 'dot-bird',    label: 'Birds',         total: '2.46 billion', dots: 246 },
-      { cls: 'dot-reptile', label: 'Reptiles',      total: '51 million',   dots: 5   },
-      { cls: 'dot-frog',    label: 'Frogs',         total: '21 million',   dots: 2   },
-      { cls: 'dot-insect',  label: 'Invertebrates', total: '330 million',  dots: 33  }
-    ];
-    const tip = document.createElement('div');
-    tip.id = 'pict-tip';
-    document.body.appendChild(tip);
-    const dots = [];
-    groups.forEach(g => { for (let i = 0; i < g.dots; i++) dots.push(g); });
-    for (let i = dots.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [dots[i], dots[j]] = [dots[j], dots[i]];
-    }
-    dots.forEach(g => {
-      const d = document.createElement('div');
-      d.className = 'pict-dot ' + g.cls;
-      d.dataset.group = g.cls;
-      d.addEventListener('mouseenter', () => {
-        tip.innerHTML = `<strong>${g.label}</strong><br>${g.total} killed or displaced`;
-        tip.style.display = 'block';
-      });
-      d.addEventListener('mousemove', e => {
-        tip.style.left = (e.clientX + 14) + 'px';
-        tip.style.top  = (e.clientY - 10) + 'px';
-      });
-      d.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
-      el.appendChild(d);
+    <section class="card">
+      <div class="grid-2-1">
+        <div>
+          <p class="card-tag">Chart 05 &mdash; Animal Impact</p>
+          <h3 class="card-title">3 Billion Animals: The Toll of Black Summer</h3>
+          <p class="card-caption">Each dot represents approximately 10 million animals killed or displaced. Click a
+            group in the legend to highlight.</p>
+          <div class="pict-grid" id="pictogram"></div>
+          <div class="pict-legend" id="pict-legend-controls">
+            <div class="pict-legend-item active" data-group="all">
+              <div class="pict-legend-dot" style="background:rgba(255,255,255,.3)"></div>All
+            </div>
+            <div class="pict-legend-item" data-group="dot-mammal">
+              <div class="pict-legend-dot dot-mammal"></div>Mammals
+            </div>
+            <div class="pict-legend-item" data-group="dot-bird">
+              <div class="pict-legend-dot dot-bird"></div>Birds
+            </div>
+            <div class="pict-legend-item" data-group="dot-reptile">
+              <div class="pict-legend-dot dot-reptile"></div>Reptiles
+            </div>
+            <div class="pict-legend-item" data-group="dot-frog">
+              <div class="pict-legend-dot dot-frog"></div>Frogs
+            </div>
+            <div class="pict-legend-item" data-group="dot-insect">
+              <div class="pict-legend-dot dot-insect"></div>Invertebrates
+            </div>
+          </div>
+          <p class="card-caption">WWF Australia estimated 3 billion vertebrates were killed, injured, or forcibly
+            displaced by the 2019&ndash;20 fires &mdash; the largest documented wildlife disaster in modern history.</p>
+          <p class="card-source">Source: <a
+              href="https://www.wwf.org.au/news/news/2020/3-billion-animals-impacted-by-australia-s-bushfire-crisis"
+              target="_blank" rel="noopener">WWF Australia (2020) &mdash; 3 Billion Animals Report</a></p>
+        </div>
+        <aside>
+          <div class="stat-block"><span class="stat-n">34</span>
+            <div class="stat-u">Species</div>
+            <div class="stat-d">newly added to Australia's threatened species list as a direct result of Black Summer
+            </div>
+          </div>
+          <div class="stat-block"><span class="stat-n">49%</span>
+            <div class="stat-u">of Land</div>
+            <div class="stat-d">of Kangaroo Island burned in a single season &mdash; home to species found nowhere else
+              on Earth</div>
+          </div>
+          <div class="stat-block"><span class="stat-n">80%</span>
+            <div class="stat-u">of Area</div>
+            <div class="stat-d">of the Greater Blue Mountains World Heritage Area was burnt</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="card">
+      <p class="card-tag">Chart 06 &mdash; Species at Risk by State</p>
+      <h3 class="card-title">Threatened Species Count vs Fire Habitat Overlap</h3>
+      <div id="chart6" class="chart-holder"></div>
+      <p class="card-caption">NSW and QLD host the most threatened species and were the worst fire-affected states. Bar
+        colour shows what percentage of each state's critical habitat overlapped the 2019&ndash;20 fire footprint.</p>
+      <p class="card-source">Source: <a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/lists"
+          target="_blank" rel="noopener">DCCEEW &mdash; EPBC Act Threatened Species List 2024</a></p>
+    </section>
+
+    <section class="card">
+      <p class="card-tag">Chart 07 &mdash; Threatened Species Map</p>
+      <h3 class="card-title">Australia's Biodiversity Crisis: EPBC-Listed Threatened Species by State</h3>
+      <div id="chart7" class="chart-holder chart-holder--map"></div>
+      <p class="card-caption">Queensland and New South Wales are home to the greatest concentration of threatened
+        species in Australia. Hover over each state to see the breakdown of Critically Endangered, Endangered and
+        Vulnerable species.</p>
+      <p class="card-source">Source: <a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/lists"
+          target="_blank" rel="noopener">DCCEEW &mdash; EPBC Act Threatened Species List 2024</a>; <a
+          href="https://www.iucnredlist.org" target="_blank" rel="noopener">IUCN Red List</a></p>
+    </section>
+
+    <section class="card">
+      <p class="card-tag">Chart 08 &mdash; Escalating Risk</p>
+      <h3 class="card-title">How Black Summer Changed the Threat Status of Key Species</h3>
+      <div id="chart8" class="chart-holder"></div>
+      <p class="card-caption">After Black Summer, 16 species across five taxonomic groups were formally uplisted to
+        higher threat categories under the EPBC Act. Each line is a species. Each downward slope is a step closer to
+        extinction. Use the filter to explore by group.</p>
+      <p class="card-source">Source: <a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/lists"
+          target="_blank" rel="noopener">DCCEEW</a> / <a href="https://www.iucnredlist.org" target="_blank"
+          rel="noopener">IUCN Red List</a> &mdash; post-fire species assessments 2020&ndash;2022</p>
+    </section>
+
+  </main>
+
+  <div class="transition-band zone-transition-2">
+    <div class="wrap" style="text-align:center;">
+      <p class="transition-text">&ldquo;Five years on. The fires are out. The damage is not.&rdquo;</p>
+      <p class="transition-cite">The reality entering Act III &mdash; recovery is uneven, the threatened species list keeps growing, and the climate trajectory that caused Black Summer remains on course to repeat it.</p>
+    </div>
+  </div>
+
+  <!-- ACT III — DEEP RED -->
+  <section id="act3" class="act-intro zone-red wrap">
+    <div class="act-number">03</div>
+    <h2 class="act-heading">The Aftermath</h2>
+    <p class="act-lead">Some ecosystems are beginning to recover. Others will not. And the climate models are
+      unambiguous &mdash; unless emissions trajectories change dramatically, fire seasons like 2019&ndash;20 will become
+      the new normal.</p>
+  </section>
+
+  <main class="zone-red wrap wrap--flush">
+
+    <section class="card">
+      <p class="card-tag">Chart 09 &mdash; Species Recovery</p>
+      <h3 class="card-title">Population Recovery Trajectory: Key Species Post&ndash;Black Summer (2020&ndash;2024)</h3>
+      <div id="chart9" class="chart-holder"></div>
+      <p class="card-caption">Recovery is deeply uneven across affected species. Some are rebounding. Others remain
+        critically below pre-fire population levels five years on.</p>
+      <p class="card-source">Source: <a href="https://www.dcceew.gov.au/environment/biodiversity/threatened"
+          target="_blank" rel="noopener">DCCEEW Species Recovery Plans</a>; <a href="https://www.wwf.org.au"
+          target="_blank" rel="noopener">WWF Australia post-fire monitoring reports</a></p>
+    </section>
+
+    <section class="card">
+      <p class="card-tag">Chart 10 &mdash; Habitat Loss</p>
+      <h3 class="card-title">Cumulative Forest &amp; Woodland Loss by State (1990&ndash;2023)</h3>
+      <div id="chart10" class="chart-holder"></div>
+      <p class="card-caption">Decades of land clearing combined with accelerating fire has pushed habitat loss to
+        critical levels in every state. The curves show no sign of flattening.</p>
+      <p class="card-source">Source: <a href="https://www.agriculture.gov.au/abares/forestsaustralia" target="_blank"
+          rel="noopener">ABARES &mdash; Australia's State of the Forests Report 2023</a></p>
+    </section>
+
+    <section class="card">
+      <p class="card-tag">Chart 11 &mdash; Funding vs Extinction Rate</p>
+      <h3 class="card-title">Is Conservation Funding Making a Difference?</h3>
+      <div id="chart11" class="chart-holder"></div>
+      <p class="card-caption">Despite tripling conservation funding after Black Summer, the threatened species list
+        continues to grow. Money alone cannot reverse the scale of what was lost &mdash; or what the climate will keep
+        taking.</p>
+      <p class="card-source">Source: <a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/lists"
+          target="_blank" rel="noopener">DCCEEW Budget Statements / EPBC Act Threatened Species List historical data</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <p class="card-tag">Chart 12 &mdash; Fire Eras</p>
+      <h3 class="card-title">Fire Footprint by State Across Five Fire Eras</h3>
+      <div id="chart12" class="chart-holder"></div>
+      <p class="card-caption">Black Summer was defined by an unprecedented concentration of fire in the ecologically
+        rich south-east &mdash; a region that had burned relatively little in prior decades. The pattern is shifting
+        southward as the climate dries.</p>
+      <p class="card-source">Source: <a
+          href="https://www.agriculture.gov.au/abares/forestsaustralia/forest-data-maps-and-tools/forest-fire-data"
+          target="_blank" rel="noopener">ABARES / DAFF fire extent data</a>; <a
+          href="https://www.afac.com.au/initiative/national-situation-reports" target="_blank" rel="noopener">AFAC
+          Annual Season Reviews 2000&ndash;2024</a></p>
+    </section>
+
+    <section class="card">
+      <p class="card-tag">Chart 13 &mdash; Projections</p>
+      <h3 class="card-title">Projected Catastrophic Fire Weather Days to 2070</h3>
+      <div id="chart13" class="chart-holder"></div>
+      <p class="card-caption">Under high emissions, catastrophic fire weather days more than double by 2070. Under low
+        emissions, the increase is still significant &mdash; but manageable. The gap between these lines represents the
+        cost of inaction, measured in fire seasons. Toggle the checkboxes to compare scenarios.</p>
+      <p class="card-source">Source: <a
+          href="https://www.csiro.au/en/research/natural-environment/climate/state-of-the-climate" target="_blank"
+          rel="noopener">CSIRO &amp; BOM &mdash; State of the Climate 2022</a>; Climate Council of Australia projections
+      </p>
+    </section>
+
+    <section class="card">
+      <p class="card-tag">Chart 14 &mdash; Projected Fire Risk Map</p>
+      <h3 class="card-title">Australia in 2070: Projected Fire Risk Under High Emissions</h3>
+      <div id="chart14" class="chart-holder chart-holder--map"></div>
+      <p class="card-caption">Under high emissions scenarios, CSIRO modelling projects dramatically increased fire risk
+        across southern and eastern Australia by 2070. States that have historically experienced moderate fire pressure
+        &mdash; Victoria, NSW, and South Australia &mdash; face the steepest relative increases. The north remains
+        extreme; the south catches up. Hover over each state to see the projected risk index.</p>
+      <p class="card-source">Source: <a
+          href="https://www.csiro.au/en/research/natural-environment/climate/state-of-the-climate" target="_blank"
+          rel="noopener">CSIRO &amp; BOM &mdash; State of the Climate 2022</a>; <a
+          href="https://www.climatecouncil.org.au" target="_blank" rel="noopener">Climate Council of Australia</a></p>
+    </section>
+
+  </main>
+
+  <div class="closing zone-closing">
+    <div class="wrap">
+      <p class="closing-text">Australia has lost more mammal species to extinction than any other country on
+        Earth.<br>Black Summer accelerated a crisis already decades in the making.<br><strong>The question is no longer
+          whether it will happen again. It is how bad it will be.</strong></p>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner wrap">
+      <div>
+        <h4>Data Sources</h4>
+        <ul>
+          <li><a
+              href="https://www.agriculture.gov.au/abares/forestsaustralia/forest-data-maps-and-tools/forest-fire-data"
+              target="_blank" rel="noopener">ABARES / DAFF &mdash; Forest Fire Area Data</a></li>
+          <li><a href="http://www.bom.gov.au/climate/data/" target="_blank" rel="noopener">Bureau of Meteorology &mdash;
+              Climate &amp; FFDI Records</a></li>
+          <li><a href="https://www.afac.com.au/initiative/national-situation-reports" target="_blank"
+              rel="noopener">AFAC &mdash; Annual Bushfire Season Reviews</a></li>
+          <li><a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/lists" target="_blank"
+              rel="noopener">DCCEEW &mdash; EPBC Act Threatened Species List</a></li>
+          <li><a href="https://www.wwf.org.au/news/news/2020/3-billion-animals-impacted-by-australia-s-bushfire-crisis"
+              target="_blank" rel="noopener">WWF Australia &mdash; 3 Billion Animals Report</a></li>
+          <li><a href="https://www.iucnredlist.org" target="_blank" rel="noopener">IUCN Red List &mdash; Species Threat
+              Assessments</a></li>
+          <li><a href="https://www.ala.org.au" target="_blank" rel="noopener">Atlas of Living Australia &mdash; Species
+              Records</a></li>
+          <li><a href="https://www.csiro.au/en/research/natural-environment/climate/state-of-the-climate"
+              target="_blank" rel="noopener">CSIRO &amp; BOM &mdash; State of the Climate 2022</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>About</h4>
+        <p>Built using Vega-Lite 5, HTML5, and CSS3. All charts are stored as separate JSON files embedded via Vega
+          Embed. Growing up in rural Victoria with fires burning directly across the street &mdash; this is a story
+          lived as much as researched.</p>
+        <p style="margin-top:1rem;opacity:.5;font-size:.82rem;">FIT2179 Data Visualisation 2 &mdash; Monash University
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      if (pct < 0.33) {
+        nav.style.background = '#0d0d0d';
+      } else if (pct < 0.66) {
+        const t = (pct - 0.33) / 0.33;
+        const r = Math.round(13 + t * (167));
+        const g = Math.round(13 + t * (47));
+        const b = Math.round(13 - t * (3));
+        nav.style.background = `rgb(${r},${g},${b})`;
+      } else {
+        const t = (pct - 0.66) / 0.34;
+        const r = Math.round(180 - t * 40);
+        const g = Math.round(60 - t * 40);
+        const b = 10;
+        nav.style.background = `rgb(${r},${g},${b})`;
+      }
     });
-    document.getElementById('pict-legend-controls').addEventListener('click', e => {
-      const item = e.target.closest('.pict-legend-item');
-      if (!item) return;
-      const group = item.dataset.group;
-      document.querySelectorAll('.pict-legend-item').forEach(i => i.classList.remove('active'));
-      item.classList.add('active');
-      document.querySelectorAll('.pict-dot').forEach(d => {
-        const match = group === 'all' || d.dataset.group === group;
-        d.style.opacity = match ? '0.9' : '0.07';
-        d.style.transform = match ? 'scale(1)' : 'scale(0.75)';
+
+    const opts = { actions: false, renderer: 'svg' };
+    const charts = [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+    charts.forEach(n => {
+      vegaEmbed(`#chart${n}`, `charts/chart${n}.json`, opts).catch(err => {
+        const el = document.querySelector(`#chart${n}`);
+        if (el) el.innerHTML = `<p style="color:#ff6b3d;font-weight:700;padding:1rem;">Chart ${n} could not load. Check that charts/chart${n}.json exists.</p>`;
       });
     });
-  })();
-</script>
+
+    (function () {
+      const el = document.getElementById('pictogram');
+      const groups = [
+        { cls: 'dot-mammal', label: 'Mammals', total: '143 million', dots: 14 },
+        { cls: 'dot-bird', label: 'Birds', total: '2.46 billion', dots: 246 },
+        { cls: 'dot-reptile', label: 'Reptiles', total: '51 million', dots: 5 },
+        { cls: 'dot-frog', label: 'Frogs', total: '21 million', dots: 2 },
+        { cls: 'dot-insect', label: 'Invertebrates', total: '330 million', dots: 33 }
+      ];
+      const tip = document.createElement('div');
+      tip.id = 'pict-tip';
+      document.body.appendChild(tip);
+      const dots = [];
+      groups.forEach(g => { for (let i = 0; i < g.dots; i++) dots.push(g); });
+      for (let i = dots.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [dots[i], dots[j]] = [dots[j], dots[i]];
+      }
+      dots.forEach(g => {
+        const d = document.createElement('div');
+        d.className = 'pict-dot ' + g.cls;
+        d.dataset.group = g.cls;
+        d.addEventListener('mouseenter', () => {
+          tip.innerHTML = `<strong>${g.label}</strong><br>${g.total} killed or displaced`;
+          tip.style.display = 'block';
+        });
+        d.addEventListener('mousemove', e => {
+          tip.style.left = (e.clientX + 14) + 'px';
+          tip.style.top = (e.clientY - 10) + 'px';
+        });
+        d.addEventListener('mouseleave', () => { tip.style.display = 'none'; });
+        el.appendChild(d);
+      });
+      document.getElementById('pict-legend-controls').addEventListener('click', e => {
+        const item = e.target.closest('.pict-legend-item');
+        if (!item) return;
+        const group = item.dataset.group;
+        document.querySelectorAll('.pict-legend-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+        document.querySelectorAll('.pict-dot').forEach(d => {
+          const match = group === 'all' || d.dataset.group === group;
+          d.style.opacity = match ? '0.9' : '0.07';
+          d.style.transform = match ? 'scale(1)' : 'scale(0.75)';
+        });
+      });
+    })();
+  </script>
 </body>
+
 </html>
