@@ -312,9 +312,13 @@
 
   <div class="closing zone-closing">
     <div class="wrap">
-      <p class="closing-text">Australia has lost more mammal species to extinction than any other country on
-        Earth.<br>Black Summer accelerated a crisis already decades in the making.<br><strong>The question is no longer
-          whether it will happen again. It is how bad it will be.</strong></p>
+      <p class="closing-text">Every species lost to extinction is gone forever. Not endangered. Not recoverable.
+        Gone.<br><br>Australia has already crossed that line more times than any other nation on Earth. Black Summer
+        didn't start this crisis &mdash; it accelerated one that has been building for decades. The fires are becoming
+        more frequent. The recovery windows are shrinking. The species left have fewer places to go.<br><br>We are not
+        watching a natural disaster unfold. We are watching the consequences of decisions &mdash; about emissions, about
+        land clearing, about how much we are willing to spend to protect what remains.<br><br><strong>The fires will
+          come back. The only question is what will still be here when they do.</strong></p>
     </div>
   </div>
 
@@ -376,10 +380,12 @@
 
     const opts = { actions: false, renderer: 'svg' };
     const charts = [1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+    const chartVersion = Date.now();
     charts.forEach(n => {
-      vegaEmbed(`#chart${n}`, `charts/chart${n}.json`, opts).catch(err => {
+      vegaEmbed(`#chart${n}`, `charts/chart${n}.json?v=${chartVersion}`, opts).catch(err => {
+        console.error(`Chart ${n} failed to load`, err);
         const el = document.querySelector(`#chart${n}`);
-        if (el) el.innerHTML = `<p style="color:#ff6b3d;font-weight:700;padding:1rem;">Chart ${n} could not load. Check that charts/chart${n}.json exists.</p>`;
+        if (el) el.innerHTML = `<p style="color:#ff6b3d;font-weight:700;padding:1rem;">Chart ${n} could not load. ${err?.message || `Check charts/chart${n}.json.`}</p>`;
       });
     });
 
