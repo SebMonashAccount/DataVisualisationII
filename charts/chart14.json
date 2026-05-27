@@ -3,93 +3,352 @@
   "title": {
     "text": "Projected Fire Hotspots Across Australia by 2070 (High Emissions, RCP 8.5)",
     "subtitle": "Each dot = a projected fire hotspot region. Size = relative fire frequency increase. Colour = severity. Click a dot for details.",
-    "fontSize": 13, "subtitleFontSize": 10,
-    "subtitleColor": "#888", "anchor": "start", "color": "#ffffff",
-    "font": "Playfair Display, serif", "subtitleFont": "DM Mono, monospace"
+    "fontSize": 13,
+    "subtitleFontSize": 10,
+    "subtitleColor": "#888",
+    "anchor": "start",
+    "color": "#ffffff",
+    "font": "Playfair Display, serif",
+    "subtitleFont": "DM Mono, monospace"
   },
-  "width": 700, "height": 480,
-  "projection": { "type": "mercator", "center": [134, -27], "scale": 750 },
+  "width": "container",
+  "height": 480,
+  "background": "transparent",
+  "projection": {
+    "type": "mercator",
+    "center": [
+      134,
+      -27
+    ],
+    "scale": 750
+  },
+  "params": [
+    {
+      "name": "dotClick",
+      "select": {
+        "type": "point",
+        "on": "click",
+        "fields": [
+          "region"
+        ]
+      }
+    }
+  ],
   "layer": [
     {
       "data": {
         "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
-        "format": { "type": "json", "property": "features" }
+        "format": {
+          "type": "json",
+          "property": "features"
+        }
       },
-      "mark": { "type": "geoshape", "fill": "#1a0800", "stroke": "#3a1500", "strokeWidth": 1 }
+      "mark": {
+        "type": "geoshape",
+        "fill": "#1a0800",
+        "stroke": "#3a1500",
+        "strokeWidth": 1
+      }
     },
     {
       "data": {
         "values": [
-          {"region":"Top End (NT)","lat":-13.5,"lon":131.5,"severity":5,"freq_increase":220,"risk":"Extreme","detail":"Year-round burning intensifies. Savanna fire season extends by 3+ months by 2070."},
-          {"region":"Kimberley (WA)","lat":-17.0,"lon":126.5,"severity":5,"freq_increase":210,"risk":"Extreme","detail":"Tropical-temperate interface. Fire frequency doubles under high emissions."},
-          {"region":"Cape York (QLD)","lat":-14.5,"lon":144.5,"severity":4,"freq_increase":180,"risk":"Very High","detail":"Wet-dry season boundary shifts south. Rainforest edges increasingly threatened."},
-          {"region":"Pilbara (WA)","lat":-22.0,"lon":118.5,"severity":4,"freq_increase":175,"risk":"Very High","detail":"Heatwaves of 50°C+ projected. Fire risk index nearly triples."},
-          {"region":"Central Australia (NT)","lat":-24.0,"lon":134.0,"severity":3,"freq_increase":150,"risk":"High","detail":"Desert spinifex fires become more intense and more frequent under drier conditions."},
-          {"region":"South-West WA","lat":-31.5,"lon":116.5,"severity":4,"freq_increase":170,"risk":"Very High","detail":"Rainfall down 20%. Perth Hills and Darling Range face near-annual catastrophic seasons."},
-          {"region":"Mid West (WA)","lat":-28.0,"lon":115.5,"severity":3,"freq_increase":145,"risk":"High","detail":"Declining winter rainfall extends fire weather into autumn and spring."},
-          {"region":"Eyre Peninsula (SA)","lat":-33.5,"lon":135.5,"severity":3,"freq_increase":140,"risk":"High","detail":"2005 Wangary fire scenario becomes 3x more likely. Grain-growing regions at acute risk."},
-          {"region":"Flinders Ranges (SA)","lat":-31.5,"lon":138.5,"severity":3,"freq_increase":135,"risk":"High","detail":"Rocky terrain and dry scrub. Fire weather days increase by 130% by 2070."},
-          {"region":"South-East QLD","lat":-27.5,"lon":152.5,"severity":4,"freq_increase":168,"risk":"Very High","detail":"Hinterland ranges at risk of repeated burning. Koala habitat under severe pressure."},
-          {"region":"Northern NSW","lat":-29.5,"lon":151.0,"severity":4,"freq_increase":172,"risk":"Very High","detail":"New England Tableland and Northern Rivers — fire seasons extend into winter."},
-          {"region":"Greater Blue Mountains","lat":-33.7,"lon":150.3,"severity":5,"freq_increase":195,"risk":"Extreme","detail":"80% burned in Black Summer 2020. Near-annual catastrophic conditions projected by 2060."},
-          {"region":"Southern NSW Coast","lat":-36.5,"lon":149.5,"severity":4,"freq_increase":165,"risk":"Very High","detail":"Bega Valley and South Coast — recovery from 2020 ongoing as next event cycle shortens."},
-          {"region":"Victorian Alps","lat":-37.0,"lon":147.5,"severity":5,"freq_increase":190,"risk":"Extreme","detail":"Alpine ash forests already fire-stressed. Return interval drops below 15 years — extinction threshold for ash forests."},
-          {"region":"Gippsland (VIC)","lat":-37.8,"lon":147.0,"severity":4,"freq_increase":162,"risk":"Very High","detail":"Unique wet sclerophyll forests. Leadbeater's Possum last habitat under repeated fire threat."},
-          {"region":"Central VIC","lat":-36.8,"lon":144.5,"severity":3,"freq_increase":138,"risk":"High","detail":"Pyrenees and Grampians — bushfire weeks extend. Grape-growing regions impacted."},
-          {"region":"Adelaide Hills (SA)","lat":-35.0,"lon":138.8,"severity":3,"freq_increase":132,"risk":"High","detail":"2019 Cudlee Creek fire precursor to more frequent events. 90% probability of repeat by 2050."},
-          {"region":"Kangaroo Island (SA)","lat":-35.8,"lon":137.0,"severity":5,"freq_increase":200,"risk":"Extreme","detail":"49% burned in 2020. Unique fauna with nowhere to go. Projected to burn again within 20 years."},
-          {"region":"South-West VIC","lat":-38.2,"lon":143.0,"severity":3,"freq_increase":128,"risk":"High","detail":"Otways and Portland regions. Plantation forests face increased risk through 2050s."},
-          {"region":"Tasmania (NE)","lat":-41.5,"lon":147.5,"severity":3,"freq_increase":120,"risk":"High","detail":"Ancient pencil pine forests burning for first time in millennia. Irreplaceable ecosystem at risk."},
-          {"region":"Tasmania (SW)","lat":-43.0,"lon":146.0,"severity":2,"freq_increase":90,"risk":"Moderate-High","detail":"World Heritage rainforest. 2016 fires were unprecedented — becoming more frequent under climate change."},
-          {"region":"ACT Region","lat":-35.5,"lon":149.2,"severity":4,"freq_increase":158,"risk":"Very High","detail":"2003 Canberra fires reached suburbs. 2020 surrounded the territory. Near-annual extreme risk by 2060."}
+          {
+            "region": "Top End (NT)",
+            "lat": -13.5,
+            "lon": 131.5,
+            "severity": 5,
+            "freq_increase": 220,
+            "risk": "Extreme",
+            "detail": "Year-round burning intensifies. Savanna fire season extends by 3+ months by 2070."
+          },
+          {
+            "region": "Kimberley (WA)",
+            "lat": -17.0,
+            "lon": 126.5,
+            "severity": 5,
+            "freq_increase": 210,
+            "risk": "Extreme",
+            "detail": "Tropical-temperate interface. Fire frequency doubles under high emissions."
+          },
+          {
+            "region": "Cape York (QLD)",
+            "lat": -14.5,
+            "lon": 144.5,
+            "severity": 4,
+            "freq_increase": 180,
+            "risk": "Very High",
+            "detail": "Wet-dry season boundary shifts south. Rainforest edges increasingly threatened."
+          },
+          {
+            "region": "Pilbara (WA)",
+            "lat": -22.0,
+            "lon": 118.5,
+            "severity": 4,
+            "freq_increase": 175,
+            "risk": "Very High",
+            "detail": "Heatwaves of 50\u00b0C+ projected. Fire risk index nearly triples."
+          },
+          {
+            "region": "Central Australia (NT)",
+            "lat": -24.0,
+            "lon": 134.0,
+            "severity": 3,
+            "freq_increase": 150,
+            "risk": "High",
+            "detail": "Desert spinifex fires become more intense and more frequent under drier conditions."
+          },
+          {
+            "region": "South-West WA",
+            "lat": -31.5,
+            "lon": 116.5,
+            "severity": 4,
+            "freq_increase": 170,
+            "risk": "Very High",
+            "detail": "Rainfall down 20%. Perth Hills and Darling Range face near-annual catastrophic seasons."
+          },
+          {
+            "region": "Mid West (WA)",
+            "lat": -28.0,
+            "lon": 115.5,
+            "severity": 3,
+            "freq_increase": 145,
+            "risk": "High",
+            "detail": "Declining winter rainfall extends fire weather into autumn and spring."
+          },
+          {
+            "region": "Eyre Peninsula (SA)",
+            "lat": -33.5,
+            "lon": 135.5,
+            "severity": 3,
+            "freq_increase": 140,
+            "risk": "High",
+            "detail": "2005 Wangary fire scenario becomes 3x more likely. Grain-growing regions at acute risk."
+          },
+          {
+            "region": "Flinders Ranges (SA)",
+            "lat": -31.5,
+            "lon": 138.5,
+            "severity": 3,
+            "freq_increase": 135,
+            "risk": "High",
+            "detail": "Rocky terrain and dry scrub. Fire weather days increase by 130% by 2070."
+          },
+          {
+            "region": "South-East QLD",
+            "lat": -27.5,
+            "lon": 152.5,
+            "severity": 4,
+            "freq_increase": 168,
+            "risk": "Very High",
+            "detail": "Hinterland ranges at risk of repeated burning. Koala habitat under severe pressure."
+          },
+          {
+            "region": "Northern NSW",
+            "lat": -29.5,
+            "lon": 151.0,
+            "severity": 4,
+            "freq_increase": 172,
+            "risk": "Very High",
+            "detail": "New England Tableland and Northern Rivers \u2014 fire seasons extend into winter."
+          },
+          {
+            "region": "Greater Blue Mountains",
+            "lat": -33.7,
+            "lon": 150.3,
+            "severity": 5,
+            "freq_increase": 195,
+            "risk": "Extreme",
+            "detail": "80% burned in Black Summer 2020. Near-annual catastrophic conditions projected by 2060."
+          },
+          {
+            "region": "Southern NSW Coast",
+            "lat": -36.5,
+            "lon": 149.5,
+            "severity": 4,
+            "freq_increase": 165,
+            "risk": "Very High",
+            "detail": "Bega Valley and South Coast \u2014 recovery from 2020 ongoing as next event cycle shortens."
+          },
+          {
+            "region": "Victorian Alps",
+            "lat": -37.0,
+            "lon": 147.5,
+            "severity": 5,
+            "freq_increase": 190,
+            "risk": "Extreme",
+            "detail": "Alpine ash forests already fire-stressed. Return interval drops below 15 years \u2014 extinction threshold for ash forests."
+          },
+          {
+            "region": "Gippsland (VIC)",
+            "lat": -37.8,
+            "lon": 147.0,
+            "severity": 4,
+            "freq_increase": 162,
+            "risk": "Very High",
+            "detail": "Unique wet sclerophyll forests. Leadbeater's Possum last habitat under repeated fire threat."
+          },
+          {
+            "region": "Central VIC",
+            "lat": -36.8,
+            "lon": 144.5,
+            "severity": 3,
+            "freq_increase": 138,
+            "risk": "High",
+            "detail": "Pyrenees and Grampians \u2014 bushfire weeks extend. Grape-growing regions impacted."
+          },
+          {
+            "region": "Adelaide Hills (SA)",
+            "lat": -35.0,
+            "lon": 138.8,
+            "severity": 3,
+            "freq_increase": 132,
+            "risk": "High",
+            "detail": "2019 Cudlee Creek fire precursor to more frequent events. 90% probability of repeat by 2050."
+          },
+          {
+            "region": "Kangaroo Island (SA)",
+            "lat": -35.8,
+            "lon": 137.0,
+            "severity": 5,
+            "freq_increase": 200,
+            "risk": "Extreme",
+            "detail": "49% burned in 2020. Unique fauna with nowhere to go. Projected to burn again within 20 years."
+          },
+          {
+            "region": "South-West VIC",
+            "lat": -38.2,
+            "lon": 143.0,
+            "severity": 3,
+            "freq_increase": 128,
+            "risk": "High",
+            "detail": "Otways and Portland regions. Plantation forests face increased risk through 2050s."
+          },
+          {
+            "region": "Tasmania (NE)",
+            "lat": -41.5,
+            "lon": 147.5,
+            "severity": 3,
+            "freq_increase": 120,
+            "risk": "High",
+            "detail": "Ancient pencil pine forests burning for first time in millennia. Irreplaceable ecosystem at risk."
+          },
+          {
+            "region": "Tasmania (SW)",
+            "lat": -43.0,
+            "lon": 146.0,
+            "severity": 2,
+            "freq_increase": 90,
+            "risk": "Moderate-High",
+            "detail": "World Heritage rainforest. 2016 fires were unprecedented \u2014 becoming more frequent under climate change."
+          },
+          {
+            "region": "ACT Region",
+            "lat": -35.5,
+            "lon": 149.2,
+            "severity": 4,
+            "freq_increase": 158,
+            "risk": "Very High",
+            "detail": "2003 Canberra fires reached suburbs. 2020 surrounded the territory. Near-annual extreme risk by 2060."
+          }
         ]
       },
-      "params": [
-        {
-          "name": "dotClick",
-          "select": { "type": "point", "on": "click" }
-        }
-      ],
-      "layer": [
-        {
-          "mark": { "type": "circle", "opacity": 0.82, "stroke": "#0d0000", "strokeWidth": 0.5 },
-          "encoding": {
-            "longitude": { "field": "lon", "type": "quantitative" },
-            "latitude":  { "field": "lat", "type": "quantitative" },
-            "size": {
-              "field": "freq_increase", "type": "quantitative",
-              "scale": { "range": [120, 1800] },
-              "legend": { "title": "Fire Freq. Increase (%)", "orient": "bottom-left", "titleColor": "#888", "labelColor": "#888", "titleFont": "DM Mono", "labelFont": "DM Mono", "titleFontSize": 9, "labelFontSize": 9 }
-            },
-            "color": {
-              "field": "severity", "type": "ordinal",
-              "scale": {
-                "domain": [2, 3, 4, 5],
-                "range": ["#c9a227","#e8520a","#c0392b","#8b0000"]
-              },
-              "legend": {
-                "title": "Severity",
-                "orient": "bottom-right",
-                "titleColor": "#888", "labelColor": "#888",
-                "titleFont": "DM Mono", "labelFont": "DM Mono",
-                "titleFontSize": 9, "labelFontSize": 9,
-                "labelExpr": "datum.value===2?'Moderate-High':datum.value===3?'High':datum.value===4?'Very High':'Extreme'"
-              }
-            },
-            "opacity": {
-              "condition": { "param": "dotClick", "empty": true, "value": 0.82 },
-              "value": 0.25
-            },
-            "tooltip": [
-              { "field": "region",       "title": "Region" },
-              { "field": "risk",         "title": "Risk Level" },
-              { "field": "freq_increase","title": "Fire Frequency Increase (%)" },
-              { "field": "detail",       "title": "Outlook" }
+      "mark": {
+        "type": "circle",
+        "opacity": 0.82,
+        "stroke": "#0d0000",
+        "strokeWidth": 0.5
+      },
+      "encoding": {
+        "longitude": {
+          "field": "lon",
+          "type": "quantitative"
+        },
+        "latitude": {
+          "field": "lat",
+          "type": "quantitative"
+        },
+        "size": {
+          "field": "freq_increase",
+          "type": "quantitative",
+          "scale": {
+            "range": [
+              120,
+              1800
             ]
+          },
+          "legend": {
+            "title": "Fire Freq. Increase (%)",
+            "orient": "bottom-left",
+            "titleColor": "#888",
+            "labelColor": "#888",
+            "titleFont": "DM Mono",
+            "labelFont": "DM Mono",
+            "titleFontSize": 9,
+            "labelFontSize": 9
           }
-        }
-      ]
+        },
+        "color": {
+          "field": "severity",
+          "type": "ordinal",
+          "scale": {
+            "domain": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "range": [
+              "#c9a227",
+              "#e8520a",
+              "#c0392b",
+              "#8b0000"
+            ]
+          },
+          "legend": {
+            "title": "Severity",
+            "orient": "bottom-right",
+            "titleColor": "#888",
+            "labelColor": "#888",
+            "titleFont": "DM Mono",
+            "labelFont": "DM Mono",
+            "titleFontSize": 9,
+            "labelFontSize": 9,
+            "labelExpr": "datum.value===2?'Moderate-High':datum.value===3?'High':datum.value===4?'Very High':'Extreme'"
+          }
+        },
+        "opacity": {
+          "condition": {
+            "param": "dotClick",
+            "empty": true,
+            "value": 0.82
+          },
+          "value": 0.25
+        },
+        "tooltip": [
+          {
+            "field": "region",
+            "title": "Region"
+          },
+          {
+            "field": "risk",
+            "title": "Risk Level"
+          },
+          {
+            "field": "freq_increase",
+            "title": "Fire Frequency Increase (%)"
+          },
+          {
+            "field": "detail",
+            "title": "Outlook"
+          }
+        ]
+      }
     }
   ],
-  "config": { "background": "transparent", "view": { "stroke": null } }
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
 }
