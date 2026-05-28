@@ -1,7 +1,8 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 320,
+  "height": 360,
+  "padding": {"left": 10, "right": 60, "top": 30, "bottom": 10},
   "background": "transparent",
   "data": {
     "values": [
@@ -132,7 +133,7 @@
       },
       {
         "year": 2024,
-        "area": 96.1,
+        "area": 84.0,
         "season": "2023-24"
       }
     ]
@@ -208,7 +209,7 @@
       "mark": {
         "type": "point",
         "filled": true,
-        "size": 55
+        "size": 70
       },
       "encoding": {
         "x": {
@@ -224,7 +225,51 @@
             "test": "datum.year === 2020 || datum.year === 2024",
             "value": "#d4621e"
           },
-          "value": "rgba(184,61,16,0.25)"
+          "value": "rgba(184,61,16,0.55)"
+        },
+        "tooltip": [
+          {
+            "field": "season",
+            "title": "Season"
+          },
+          {
+            "field": "area",
+            "title": "Area burned (million hectares)",
+            "format": ".1f"
+          }
+        ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dy": -11,
+        "fontSize": 9,
+        "font": "DM Mono",
+        "fontWeight": 500
+      },
+      "transform": [
+        {
+          "filter": "datum.year !== 2020 && datum.year !== 2024 && datum.area >= 7"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "area",
+          "type": "quantitative"
+        },
+        "text": {
+          "field": "area",
+          "type": "quantitative",
+          "format": ".1f"
+        },
+        "color": {
+          "value": "rgba(232,180,74,0.85)"
         }
       }
     },
@@ -232,10 +277,10 @@
       "mark": {
         "type": "text",
         "align": "center",
-        "dy": -14,
+        "dy": -18,
         "fontSize": 11,
         "font": "DM Mono",
-        "fontWeight": 500
+        "fontWeight": 600
       },
       "transform": [
         {
@@ -252,20 +297,22 @@
           "type": "quantitative"
         },
         "text": {
-          "value": "Black Summer"
+          "value": "Black Summer — 24.3 Mha"
         },
         "color": {
-          "value": "#b83d10"
+          "value": "#ff7a3c"
         }
       }
     },
     {
       "mark": {
         "type": "text",
-        "align": "center",
-        "dy": -14,
-        "fontSize": 10,
-        "font": "DM Mono"
+        "align": "right",
+        "dx": -10,
+        "dy": -6,
+        "fontSize": 11,
+        "font": "DM Mono",
+        "fontWeight": 600
       },
       "transform": [
         {
@@ -282,10 +329,10 @@
           "type": "quantitative"
         },
         "text": {
-          "value": "2023-24: 96 million hectares"
+          "value": "2023–24: 84 Mha"
         },
         "color": {
-          "value": "#9a7820"
+          "value": "#e8b04a"
         }
       }
     }

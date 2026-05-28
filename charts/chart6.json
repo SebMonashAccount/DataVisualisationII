@@ -1,48 +1,49 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 280,
+  "height": 360,
+  "padding": {"left": 10, "right": 40, "top": 20, "bottom": 30},
   "background": "transparent",
   "data": {
     "values": [
       {
-        "state": "New South Wales",
-        "count": 1028,
-        "fire_overlap": 82
-      },
-      {
         "state": "Queensland",
-        "count": 887,
+        "count": 1136,
         "fire_overlap": 65
       },
       {
-        "state": "Victoria",
-        "count": 654,
-        "fire_overlap": 78
+        "state": "New South Wales",
+        "count": 1057,
+        "fire_overlap": 82
       },
       {
         "state": "Western Australia",
-        "count": 612,
+        "count": 879,
         "fire_overlap": 45
       },
       {
+        "state": "Victoria",
+        "count": 623,
+        "fire_overlap": 78
+      },
+      {
         "state": "South Australia",
-        "count": 398,
+        "count": 436,
         "fire_overlap": 55
       },
       {
-        "state": "Tasmania",
-        "count": 312,
-        "fire_overlap": 60
-      },
-      {
         "state": "Northern Territory",
-        "count": 289,
+        "count": 401,
         "fire_overlap": 38
       },
       {
+        "state": "Tasmania",
+        "count": 348,
+        "fire_overlap": 60
+      },
+      {
         "state": "Australian Capital Territory",
-        "count": 198,
+        "count": 119,
         "fire_overlap": 85
       }
     ]
@@ -66,6 +67,10 @@
     "x": {
       "field": "count",
       "type": "quantitative",
+      "scale": {
+        "domain": [0, 1250],
+        "nice": false
+      },
       "axis": {
         "title": "Threatened species",
         "titleColor": "#888",
@@ -74,7 +79,8 @@
         "titleFont": "DM Mono",
         "titleFontSize": 10,
         "grid": true,
-        "gridColor": "#e8e0d0"
+        "gridColor": "#e8e0d0",
+        "values": [0, 200, 400, 600, 800, 1000, 1200]
       }
     },
     "color": {

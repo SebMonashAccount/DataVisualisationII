@@ -1,15 +1,15 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "width": "container",
-  "height": 450,
+  "height": 520,
   "background": "transparent",
   "projection": {
     "type": "mercator",
     "center": [
       134,
-      -28
+      -30
     ],
-    "scale": 700
+    "scale": 640
   },
   "data": {
     "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
@@ -103,21 +103,24 @@
       "type": "quantitative",
       "scale": {
         "scheme": "orangered",
-        "type": "sqrt"
+        "type": "sqrt",
+        "domain": [0, 13000],
+        "clamp": true
       },
       "legend": {
         "title": "Hectares burned per 1,000 square kilometres",
         "format": ",.0f",
-        "orient": "bottom-right",
+        "orient": "bottom-left",
         "titleFontSize": 10,
         "labelFontSize": 9,
         "titleColor": "#eee",
         "labelColor": "#ddd",
         "titleFont": "DM Mono, monospace",
         "labelFont": "DM Mono, monospace",
-        "gradientLength": 180,
+        "gradientLength": 200,
         "gradientThickness": 10,
-        "titleLimit": 260
+        "titleLimit": 260,
+        "offset": 12
       }
     },
     "tooltip": [

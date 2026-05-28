@@ -119,6 +119,10 @@
   <div class="transition-band zone-transition">
     <div class="wrap">
       <p class="transition-text">&ldquo;It wasn&rsquo;t just a fire season. It was a reckoning.&rdquo;</p>
+      <p class="transition-explainer">Black Summer wasn&rsquo;t a one-off &mdash; it was the moment the data stopped looking like
+        weather and started looking like a system collapsing. Hotter air, drier soil, longer fire windows: every driver
+        you just saw moved in the same direction at the same time. The next pages show what that convergence cost in
+        living things, not hectares.</p>
     </div>
   </div>
 
@@ -148,20 +152,17 @@
             <div class="pict-legend-item active" data-group="all">
               <div class="pict-legend-dot" style="background:rgba(255,255,255,.3)"></div>All
             </div>
-            <div class="pict-legend-item" data-group="dot-mammal">
-              <div class="pict-legend-dot dot-mammal"></div>Mammals
+            <div class="pict-legend-item" data-group="dot-reptile">
+              <div class="pict-legend-dot dot-reptile"></div>Reptiles &mdash; 2.46&nbsp;billion
             </div>
             <div class="pict-legend-item" data-group="dot-bird">
-              <div class="pict-legend-dot dot-bird"></div>Birds
+              <div class="pict-legend-dot dot-bird"></div>Birds &mdash; 180&nbsp;million
             </div>
-            <div class="pict-legend-item" data-group="dot-reptile">
-              <div class="pict-legend-dot dot-reptile"></div>Reptiles
+            <div class="pict-legend-item" data-group="dot-mammal">
+              <div class="pict-legend-dot dot-mammal"></div>Mammals &mdash; 143&nbsp;million
             </div>
             <div class="pict-legend-item" data-group="dot-frog">
-              <div class="pict-legend-dot dot-frog"></div>Frogs
-            </div>
-            <div class="pict-legend-item" data-group="dot-insect">
-              <div class="pict-legend-dot dot-insect"></div>Invertebrates
+              <div class="pict-legend-dot dot-frog"></div>Frogs &mdash; 51&nbsp;million
             </div>
           </div>
           <p class="card-caption">World Wildlife Fund Australia estimated 3 billion vertebrates were killed, injured, or forcibly
@@ -176,12 +177,12 @@
             <div class="stat-d">newly added to Australia's threatened species list as a direct result of Black Summer
             </div>
           </div>
-          <div class="stat-block"><span class="stat-n">49%</span>
+          <div class="stat-block"><span class="stat-n">48%</span>
             <div class="stat-u">of Land</div>
-            <div class="stat-d">of Kangaroo Island burned in a single season &mdash; home to species found nowhere else
-              on Earth</div>
+            <div class="stat-d">of Kangaroo Island burned in a single season (211,474&nbsp;ha) &mdash; home to species
+              found nowhere else on Earth</div>
           </div>
-          <div class="stat-block"><span class="stat-n">80%</span>
+          <div class="stat-block"><span class="stat-n">79%</span>
             <div class="stat-u">of Area</div>
             <div class="stat-d">of the Greater Blue Mountains World Heritage Area was burnt</div>
           </div>
@@ -193,9 +194,10 @@
       <p class="card-tag">Chart 06 &mdash; Species at Risk by State</p>
       <h3 class="card-title">Threatened Species Count vs Fire Habitat Overlap</h3>
       <div id="chart6" class="chart-holder"></div>
-      <p class="card-caption">New South Wales and Queensland host the most threatened species and were among the worst
-        fire-affected states. Bar colour shows what percentage of each state's critical habitat overlapped the
-        2019&ndash;20 fire footprint.</p>
+      <p class="card-caption">Queensland and New South Wales host the most threatened species under the Environment
+        Protection and Biodiversity Conservation Act, and New South Wales had the deepest habitat overlap with the
+        2019&ndash;20 fires (~82%). Bar colour shows the percentage of each state&rsquo;s threatened-species critical
+        habitat that fell inside the Black Summer fire footprint.</p>
       <p class="card-source">Source: <a href="https://www.dcceew.gov.au/environment/biodiversity/threatened/lists"
           target="_blank" rel="noopener">Department of Climate Change, Energy, the Environment and Water &mdash; Environment Protection and Biodiversity Conservation Act Threatened Species List 2024</a></p>
     </section>
@@ -232,6 +234,10 @@
   <div class="transition-band zone-transition-2">
     <div class="wrap">
       <p class="transition-text">&ldquo;Five years on. The fires are out. The damage is not.&rdquo;</p>
+      <p class="transition-explainer">Ecological recovery doesn&rsquo;t run on a news cycle. The hollow-bearing trees that
+        gliders nest in take a century to form. Alpine ash needs decades between fires to mature. The next pages track
+        the populations that haven&rsquo;t bounced back, the funding that hasn&rsquo;t closed the gap, and the fire
+        seasons climate models say are still coming.</p>
     </div>
   </div>
 
@@ -462,11 +468,10 @@
     (function () {
       const el = document.getElementById('pictogram');
       const groups = [
+        { cls: 'dot-reptile', label: 'Reptiles', total: '2.46 billion', dots: 246 },
+        { cls: 'dot-bird', label: 'Birds', total: '180 million', dots: 18 },
         { cls: 'dot-mammal', label: 'Mammals', total: '143 million', dots: 14 },
-        { cls: 'dot-bird', label: 'Birds', total: '2.46 billion', dots: 246 },
-        { cls: 'dot-reptile', label: 'Reptiles', total: '51 million', dots: 5 },
-        { cls: 'dot-frog', label: 'Frogs', total: '21 million', dots: 2 },
-        { cls: 'dot-insect', label: 'Invertebrates', total: '330 million', dots: 33 }
+        { cls: 'dot-frog', label: 'Frogs', total: '51 million', dots: 5 }
       ];
       const tip = document.createElement('div');
       tip.id = 'pict-tip';
