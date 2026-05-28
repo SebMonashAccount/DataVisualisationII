@@ -5,12 +5,18 @@
   "background": "transparent",
   "projection": {
     "type": "mercator",
-    "center": [134, -28],
+    "center": [
+      134,
+      -28
+    ],
     "scale": 700
   },
   "data": {
     "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
-    "format": { "type": "json", "property": "features" }
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
   },
   "transform": [
     {
@@ -18,55 +24,152 @@
       "from": {
         "data": {
           "values": [
-            { "state": "New South Wales",              "species": 1057, "critically_endangered": 117, "endangered": 481, "vulnerable": 459 },
-            { "state": "Victoria",                     "species": 623,  "critically_endangered": 49,  "endangered": 276, "vulnerable": 298 },
-            { "state": "Queensland",                   "species": 1136, "critically_endangered": 93,  "endangered": 472, "vulnerable": 571 },
-            { "state": "South Australia",              "species": 436,  "critically_endangered": 42,  "endangered": 177, "vulnerable": 217 },
-            { "state": "Western Australia",            "species": 879,  "critically_endangered": 78,  "endangered": 348, "vulnerable": 453 },
-            { "state": "Tasmania",                     "species": 348,  "critically_endangered": 31,  "endangered": 147, "vulnerable": 170 },
-            { "state": "Northern Territory",           "species": 401,  "critically_endangered": 28,  "endangered": 162, "vulnerable": 211 },
-            { "state": "Australian Capital Territory", "species": 119,  "critically_endangered": 14,  "endangered": 53,  "vulnerable": 52  }
+            {
+              "state": "New South Wales",
+              "species": 1057,
+              "area_km2": 800642,
+              "species_per_10000km2": 13.2,
+              "critically_endangered": 117,
+              "endangered": 481,
+              "vulnerable": 459
+            },
+            {
+              "state": "Victoria",
+              "species": 623,
+              "area_km2": 227416,
+              "species_per_10000km2": 27.4,
+              "critically_endangered": 49,
+              "endangered": 276,
+              "vulnerable": 298
+            },
+            {
+              "state": "Queensland",
+              "species": 1136,
+              "area_km2": 1730648,
+              "species_per_10000km2": 6.6,
+              "critically_endangered": 93,
+              "endangered": 472,
+              "vulnerable": 571
+            },
+            {
+              "state": "South Australia",
+              "species": 436,
+              "area_km2": 983482,
+              "species_per_10000km2": 4.4,
+              "critically_endangered": 42,
+              "endangered": 177,
+              "vulnerable": 217
+            },
+            {
+              "state": "Western Australia",
+              "species": 879,
+              "area_km2": 2529875,
+              "species_per_10000km2": 3.5,
+              "critically_endangered": 78,
+              "endangered": 348,
+              "vulnerable": 453
+            },
+            {
+              "state": "Tasmania",
+              "species": 348,
+              "area_km2": 68401,
+              "species_per_10000km2": 50.9,
+              "critically_endangered": 31,
+              "endangered": 147,
+              "vulnerable": 170
+            },
+            {
+              "state": "Northern Territory",
+              "species": 401,
+              "area_km2": 1349129,
+              "species_per_10000km2": 2.9,
+              "critically_endangered": 28,
+              "endangered": 162,
+              "vulnerable": 211
+            },
+            {
+              "state": "Australian Capital Territory",
+              "species": 119,
+              "area_km2": 2358,
+              "species_per_10000km2": 504.7,
+              "critically_endangered": 14,
+              "endangered": 53,
+              "vulnerable": 52
+            }
           ]
         },
         "key": "state",
-        "fields": ["species","critically_endangered","endangered","vulnerable"]
+        "fields": [
+          "species",
+          "species_per_10000km2",
+          "area_km2",
+          "critically_endangered",
+          "endangered",
+          "vulnerable"
+        ]
       }
     }
   ],
   "mark": {
     "type": "geoshape",
-    "stroke": "rgba(255,255,255,0.25)",
+    "stroke": "rgba(255,255,255,0.3)",
     "strokeWidth": 1.2
   },
   "encoding": {
     "color": {
-      "field": "species",
+      "field": "species_per_10000km2",
       "type": "quantitative",
-      "scale": { "scheme": "reds", "type": "sqrt" },
+      "scale": {
+        "scheme": "reds",
+        "type": "sqrt"
+      },
       "legend": {
-        "title": "Threatened Species",
-        "format": ",.0f",
+        "title": "Threatened species per 10,000 square kilometres",
+        "format": ".1f",
         "orient": "bottom-right",
         "titleFontSize": 10,
         "labelFontSize": 9,
-        "titleColor": "#ccc",
-        "labelColor": "#ccc",
+        "titleColor": "#eee",
+        "labelColor": "#ddd",
         "titleFont": "DM Mono, monospace",
         "labelFont": "DM Mono, monospace",
-        "gradientLength": 160,
-        "gradientThickness": 8
+        "gradientLength": 180,
+        "gradientThickness": 10,
+        "titleLimit": 280
       }
     },
     "tooltip": [
-      { "field": "properties.STATE_NAME", "title": "State / Territory" },
-      { "field": "species",               "title": "Total Threatened Species",  "format": ",.0f" },
-      { "field": "critically_endangered", "title": "Critically Endangered",      "format": ",.0f" },
-      { "field": "endangered",            "title": "Endangered",                 "format": ",.0f" },
-      { "field": "vulnerable",            "title": "Vulnerable",                 "format": ",.0f" }
+      {
+        "field": "properties.STATE_NAME",
+        "title": "State or Territory"
+      },
+      {
+        "field": "species_per_10000km2",
+        "title": "Threatened species per 10,000 square kilometres",
+        "format": ".1f"
+      },
+      {
+        "field": "species",
+        "title": "Total threatened species"
+      },
+      {
+        "field": "critically_endangered",
+        "title": "Critically Endangered"
+      },
+      {
+        "field": "endangered",
+        "title": "Endangered"
+      },
+      {
+        "field": "vulnerable",
+        "title": "Vulnerable"
+      }
     ]
   },
   "config": {
     "background": "transparent",
-    "view": { "stroke": null }
+    "view": {
+      "stroke": null
+    }
   }
 }

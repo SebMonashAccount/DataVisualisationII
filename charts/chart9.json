@@ -3,7 +3,7 @@
   "width": "container", "height": 300, "background": "transparent",
   "data": {
     "values": [
-      {"species":"KI Dunnart","year":2020,"pct":100},{"species":"KI Dunnart","year":2021,"pct":28},{"species":"KI Dunnart","year":2022,"pct":31},{"species":"KI Dunnart","year":2023,"pct":35},{"species":"KI Dunnart","year":2024,"pct":38},
+      {"species":"Kangaroo Island Dunnart","year":2020,"pct":100},{"species":"Kangaroo Island Dunnart","year":2021,"pct":28},{"species":"Kangaroo Island Dunnart","year":2022,"pct":31},{"species":"Kangaroo Island Dunnart","year":2023,"pct":35},{"species":"Kangaroo Island Dunnart","year":2024,"pct":38},
       {"species":"Long-footed Potoroo","year":2020,"pct":100},{"species":"Long-footed Potoroo","year":2021,"pct":45},{"species":"Long-footed Potoroo","year":2022,"pct":50},{"species":"Long-footed Potoroo","year":2023,"pct":55},{"species":"Long-footed Potoroo","year":2024,"pct":58},
       {"species":"Greater Glider","year":2020,"pct":100},{"species":"Greater Glider","year":2021,"pct":55},{"species":"Greater Glider","year":2022,"pct":62},{"species":"Greater Glider","year":2023,"pct":70},{"species":"Greater Glider","year":2024,"pct":75},
       {"species":"Regent Honeyeater","year":2020,"pct":100},{"species":"Regent Honeyeater","year":2021,"pct":60},{"species":"Regent Honeyeater","year":2022,"pct":65},{"species":"Regent Honeyeater","year":2023,"pct":72},{"species":"Regent Honeyeater","year":2024,"pct":78},

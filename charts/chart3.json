@@ -1,14 +1,12 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container",
-  "height": 420,
-  "background": "transparent",
+  "width": "container", "height": 460, "background": "transparent",
   "data": {
     "values": [
       {"season":"1999-00","temp_anomaly":0.12,"area_mha":6.3,"rainfall_deficit":35,"fire_days":22},
       {"season":"2000-01","temp_anomaly":0.08,"area_mha":5.1,"rainfall_deficit":18,"fire_days":18},
       {"season":"2001-02","temp_anomaly":0.21,"area_mha":5.8,"rainfall_deficit":42,"fire_days":24},
-      {"season":"2002-03","temp_anomaly":0.55,"area_mha":21.0,"rainfall_deficit":98,"fire_days":48},
+      {"season":"2002-03","temp_anomaly":0.55,"area_mha":21.0,"rainfall_deficit":98,"fire_days":48,"label":"2002-03: Worst season before Black Summer"},
       {"season":"2003-04","temp_anomaly":0.38,"area_mha":7.2,"rainfall_deficit":55,"fire_days":30},
       {"season":"2004-05","temp_anomaly":0.29,"area_mha":6.0,"rainfall_deficit":28,"fire_days":22},
       {"season":"2005-06","temp_anomaly":0.45,"area_mha":8.5,"rainfall_deficit":62,"fire_days":34},
@@ -24,12 +22,12 @@
       {"season":"2015-16","temp_anomaly":0.84,"area_mha":14.2,"rainfall_deficit":115,"fire_days":55},
       {"season":"2016-17","temp_anomaly":0.71,"area_mha":10.8,"rainfall_deficit":82,"fire_days":44},
       {"season":"2017-18","temp_anomaly":0.88,"area_mha":12.0,"rainfall_deficit":108,"fire_days":52},
-      {"season":"2018-19","temp_anomaly":1.42,"area_mha":8.5,"rainfall_deficit":188,"fire_days":68,"label":"2018-19"},
-      {"season":"2019-20","temp_anomaly":1.65,"area_mha":24.3,"rainfall_deficit":215,"fire_days":78,"label":"Black Summer"},
+      {"season":"2018-19","temp_anomaly":1.42,"area_mha":8.5,"rainfall_deficit":188,"fire_days":68,"label":"2018-19: Record drought year before Black Summer"},
+      {"season":"2019-20","temp_anomaly":1.65,"area_mha":24.3,"rainfall_deficit":215,"fire_days":78,"label":"Black Summer: Every climate driver at record levels simultaneously"},
       {"season":"2020-21","temp_anomaly":0.95,"area_mha":7.2,"rainfall_deficit":88,"fire_days":42},
       {"season":"2021-22","temp_anomaly":1.02,"area_mha":9.5,"rainfall_deficit":95,"fire_days":48},
       {"season":"2022-23","temp_anomaly":1.18,"area_mha":15.5,"rainfall_deficit":142,"fire_days":62},
-      {"season":"2023-24","temp_anomaly":2.18,"area_mha":98.0,"rainfall_deficit":248,"fire_days":88,"label":"2023-24"}
+      {"season":"2023-24","temp_anomaly":2.18,"area_mha":98.0,"rainfall_deficit":248,"fire_days":88,"label":"2023-24: Hottest year recorded — area burned tripled Black Summer"}
     ]
   },
   "layer": [
@@ -38,91 +36,60 @@
       "encoding": {
         "x": {
           "field": "temp_anomaly", "type": "quantitative",
-          "title": "Annual Temperature Anomaly (°C above 1961–1990 average)",
-          "axis": {
-            "titleColor": "#bbb", "labelColor": "#999",
-            "titleFont": "DM Mono", "labelFont": "DM Mono",
-            "titleFontSize": 10, "grid": true,
-            "gridColor": "rgba(255,255,255,.08)",
-            "domainColor": "rgba(255,255,255,.2)"
-          }
+          "title": "Annual Temperature Anomaly (degrees Celsius above 1961–1990 average)",
+          "axis": { "titleColor": "#ddd", "labelColor": "#bbb", "titleFont": "DM Mono", "labelFont": "DM Mono", "titleFontSize": 10, "grid": true, "gridColor": "rgba(255,255,255,.1)", "domainColor": "rgba(255,255,255,.3)" }
         },
         "y": {
           "field": "area_mha", "type": "quantitative",
-          "title": "Total Area Burned (Million ha)",
-          "axis": {
-            "titleColor": "#bbb", "labelColor": "#999",
-            "titleFont": "DM Mono", "labelFont": "DM Mono",
-            "titleFontSize": 10, "grid": true,
-            "gridColor": "rgba(255,255,255,.08)",
-            "domainColor": "rgba(255,255,255,.2)"
-          }
+          "title": "Total Area Burned (Million Hectares)",
+          "axis": { "titleColor": "#ddd", "labelColor": "#bbb", "titleFont": "DM Mono", "labelFont": "DM Mono", "titleFontSize": 10, "grid": true, "gridColor": "rgba(255,255,255,.1)", "domainColor": "rgba(255,255,255,.3)" }
         },
         "size": {
           "field": "rainfall_deficit", "type": "quantitative",
-          "title": "Rainfall Deficit (mm)",
-          "scale": { "range": [40, 900] },
-          "legend": {
-            "title": "Rainfall Deficit (mm)",
-            "orient": "right",
-            "titleColor": "#ccc", "labelColor": "#aaa",
-            "titleFont": "DM Mono", "labelFont": "DM Mono",
-            "titleFontSize": 10, "labelFontSize": 9,
-            "symbolLimit": 6,
-            "titleOrient": "top"
-          }
+          "title": "Rainfall Deficit (millimetres)",
+          "scale": { "range": [30, 1200] },
+          "legend": { "title": "Rainfall Deficit (millimetres)", "orient": "right", "titleColor": "#eee", "labelColor": "#ddd", "titleFont": "DM Mono", "labelFont": "DM Mono", "titleFontSize": 10, "labelFontSize": 9, "symbolLimit": 5, "titleOrient": "top" }
         },
         "color": {
           "field": "fire_days", "type": "quantitative",
-          "title": "Dangerous Fire Days",
+          "title": "Dangerous Fire Weather Days",
           "scale": { "scheme": "orangered", "domain": [10, 90] },
-          "legend": {
-            "title": "Dangerous Fire Days",
-            "orient": "bottom",
-            "titleColor": "#ccc", "labelColor": "#aaa",
-            "titleFont": "DM Mono", "labelFont": "DM Mono",
-            "titleFontSize": 10, "labelFontSize": 9,
-            "gradientLength": 200, "gradientThickness": 10,
-            "direction": "horizontal",
-            "titleOrient": "top"
-          }
+          "legend": { "title": "Dangerous Fire Weather Days", "orient": "bottom", "titleColor": "#eee", "labelColor": "#ddd", "titleFont": "DM Mono", "labelFont": "DM Mono", "titleFontSize": 10, "labelFontSize": 9, "gradientLength": 200, "gradientThickness": 10, "direction": "horizontal", "titleOrient": "top" }
         },
         "tooltip": [
           { "field": "season",           "title": "Fire Season" },
-          { "field": "temp_anomaly",     "title": "Temp Anomaly (°C)", "format": ".2f" },
-          { "field": "area_mha",         "title": "Area Burned (M ha)", "format": ".1f" },
-          { "field": "rainfall_deficit", "title": "Rainfall Deficit (mm)" },
-          { "field": "fire_days",        "title": "Dangerous Fire Days" }
+          { "field": "temp_anomaly",     "title": "Temperature Anomaly (degrees Celsius)", "format": ".2f" },
+          { "field": "area_mha",         "title": "Area Burned (Million Hectares)", "format": ".1f" },
+          { "field": "rainfall_deficit", "title": "Rainfall Deficit (millimetres)" },
+          { "field": "fire_days",        "title": "Dangerous Fire Weather Days" }
         ]
       }
     },
     {
-      "mark": {
-        "type": "text", "align": "left", "dx": 10, "dy": -4,
-        "fontSize": 11, "font": "DM Mono", "fontWeight": 600
-      },
+      "mark": { "type": "text", "align": "left", "dx": 10, "dy": -6, "fontSize": 10, "font": "DM Mono", "fontWeight": 600, "lineBreak": " — " },
       "transform": [ { "filter": "datum.label != null" } ],
       "encoding": {
         "x": { "field": "temp_anomaly", "type": "quantitative" },
         "y": { "field": "area_mha", "type": "quantitative" },
         "text": { "field": "label" },
-        "color": {
-          "field": "fire_days", "type": "quantitative",
-          "scale": { "scheme": "orangered", "domain": [10, 90] }
-        }
+        "color": { "field": "fire_days", "type": "quantitative", "scale": { "scheme": "orangered", "domain": [10, 90] } }
       }
     },
     {
-      "mark": {
-        "type": "line",
-        "color": "rgba(232,82,10,.35)",
-        "strokeDash": [5, 4],
-        "strokeWidth": 1.2
-      },
+      "mark": { "type": "line", "color": "rgba(232,82,10,.4)", "strokeDash": [5,4], "strokeWidth": 1.5 },
       "transform": [ { "regression": "area_mha", "on": "temp_anomaly" } ],
       "encoding": {
         "x": { "field": "temp_anomaly", "type": "quantitative" },
         "y": { "field": "area_mha", "type": "quantitative" }
+      }
+    },
+    {
+      "mark": { "type": "text", "align": "right", "dx": -4, "dy": -6, "fontSize": 9, "font": "DM Mono", "color": "rgba(232,82,10,.6)", "fontStyle": "italic" },
+      "data": { "values": [{"x": 2.15, "y": 52, "label": "Trend line"}] },
+      "encoding": {
+        "x": { "field": "x", "type": "quantitative" },
+        "y": { "field": "y", "type": "quantitative" },
+        "text": { "field": "label" }
       }
     }
   ],

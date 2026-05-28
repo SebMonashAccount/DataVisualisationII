@@ -1,22 +1,253 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container", "height": 320, "background": "transparent",
+  "width": "container",
+  "height": 320,
+  "background": "transparent",
   "data": {
     "values": [
-      {"era":"1999-2003","state":"NSW","area":3.1},{"era":"1999-2003","state":"VIC","area":5.2},{"era":"1999-2003","state":"QLD","area":8.4},{"era":"1999-2003","state":"SA","area":1.2},{"era":"1999-2003","state":"WA","area":2.8},{"era":"1999-2003","state":"NT","area":14.1},
-      {"era":"2004-2009","state":"NSW","area":2.4},{"era":"2004-2009","state":"VIC","area":1.8},{"era":"2004-2009","state":"QLD","area":10.2},{"era":"2004-2009","state":"SA","area":0.9},{"era":"2004-2009","state":"WA","area":3.5},{"era":"2004-2009","state":"NT","area":18.6},
-      {"era":"2010-2015","state":"NSW","area":3.8},{"era":"2010-2015","state":"VIC","area":2.1},{"era":"2010-2015","state":"QLD","area":12.5},{"era":"2010-2015","state":"SA","area":1.4},{"era":"2010-2015","state":"WA","area":4.2},{"era":"2010-2015","state":"NT","area":20.3},
-      {"era":"2016-2019","state":"NSW","area":4.5},{"era":"2016-2019","state":"VIC","area":2.8},{"era":"2016-2019","state":"QLD","area":11.8},{"era":"2016-2019","state":"SA","area":1.8},{"era":"2016-2019","state":"WA","area":4.9},{"era":"2016-2019","state":"NT","area":19.2},
-      {"era":"Black Summer 2019-20","state":"NSW","area":5.5},{"era":"Black Summer 2019-20","state":"VIC","area":1.5},{"era":"Black Summer 2019-20","state":"QLD","area":0.9},{"era":"Black Summer 2019-20","state":"SA","area":0.4},{"era":"Black Summer 2019-20","state":"WA","area":0.3},{"era":"Black Summer 2019-20","state":"NT","area":0.2}
+      {
+        "era": "1999-2003",
+        "state": "New South Wales",
+        "area": 3.1
+      },
+      {
+        "era": "1999-2003",
+        "state": "Victoria",
+        "area": 5.2
+      },
+      {
+        "era": "1999-2003",
+        "state": "Queensland",
+        "area": 8.4
+      },
+      {
+        "era": "1999-2003",
+        "state": "South Australia",
+        "area": 1.2
+      },
+      {
+        "era": "1999-2003",
+        "state": "Western Australia",
+        "area": 2.8
+      },
+      {
+        "era": "1999-2003",
+        "state": "Northern Territory",
+        "area": 14.1
+      },
+      {
+        "era": "2004-2009",
+        "state": "New South Wales",
+        "area": 2.4
+      },
+      {
+        "era": "2004-2009",
+        "state": "Victoria",
+        "area": 1.8
+      },
+      {
+        "era": "2004-2009",
+        "state": "Queensland",
+        "area": 10.2
+      },
+      {
+        "era": "2004-2009",
+        "state": "South Australia",
+        "area": 0.9
+      },
+      {
+        "era": "2004-2009",
+        "state": "Western Australia",
+        "area": 3.5
+      },
+      {
+        "era": "2004-2009",
+        "state": "Northern Territory",
+        "area": 18.6
+      },
+      {
+        "era": "2010-2015",
+        "state": "New South Wales",
+        "area": 3.8
+      },
+      {
+        "era": "2010-2015",
+        "state": "Victoria",
+        "area": 2.1
+      },
+      {
+        "era": "2010-2015",
+        "state": "Queensland",
+        "area": 12.5
+      },
+      {
+        "era": "2010-2015",
+        "state": "South Australia",
+        "area": 1.4
+      },
+      {
+        "era": "2010-2015",
+        "state": "Western Australia",
+        "area": 4.2
+      },
+      {
+        "era": "2010-2015",
+        "state": "Northern Territory",
+        "area": 20.3
+      },
+      {
+        "era": "2016-2019",
+        "state": "New South Wales",
+        "area": 4.5
+      },
+      {
+        "era": "2016-2019",
+        "state": "Victoria",
+        "area": 2.8
+      },
+      {
+        "era": "2016-2019",
+        "state": "Queensland",
+        "area": 11.8
+      },
+      {
+        "era": "2016-2019",
+        "state": "South Australia",
+        "area": 1.8
+      },
+      {
+        "era": "2016-2019",
+        "state": "Western Australia",
+        "area": 4.9
+      },
+      {
+        "era": "2016-2019",
+        "state": "Northern Territory",
+        "area": 19.2
+      },
+      {
+        "era": "Black Summer 2019-20",
+        "state": "New South Wales",
+        "area": 5.5
+      },
+      {
+        "era": "Black Summer 2019-20",
+        "state": "Victoria",
+        "area": 1.5
+      },
+      {
+        "era": "Black Summer 2019-20",
+        "state": "Queensland",
+        "area": 0.9
+      },
+      {
+        "era": "Black Summer 2019-20",
+        "state": "South Australia",
+        "area": 0.4
+      },
+      {
+        "era": "Black Summer 2019-20",
+        "state": "Western Australia",
+        "area": 0.3
+      },
+      {
+        "era": "Black Summer 2019-20",
+        "state": "Northern Territory",
+        "area": 0.2
+      }
     ]
   },
-  "mark": { "type": "bar", "cornerRadiusTopLeft": 2, "cornerRadiusTopRight": 2 },
-  "encoding": {
-    "x": { "field": "era", "type": "ordinal", "sort": ["1999-2003","2004-2009","2010-2015","2016-2019","Black Summer 2019-20"], "axis": { "title": null, "labelColor": "#888", "labelFont": "DM Mono", "labelFontSize": 10, "grid": false, "domainColor": "#ccc" } },
-    "y": { "field": "area", "type": "quantitative", "title": "Area Burned (Million ha)", "axis": { "titleColor": "#888", "labelColor": "#888", "titleFont": "DM Mono", "labelFont": "DM Mono", "titleFontSize": 10, "grid": true, "gridColor": "#e8e0d0" } },
-    "color": { "field": "state", "type": "nominal", "scale": { "domain": ["NSW","VIC","QLD","SA","WA","NT"], "range": ["#b83d10","#9a7820","#3d5a32","#7a6e5e","#1e4a6a","#5a8a50"] }, "legend": { "title": "State", "labelColor": "#888", "titleColor": "#888", "labelFont": "DM Mono", "orient": "right" } },
-    "xOffset": { "field": "state", "type": "nominal" },
-    "tooltip": [{ "field": "era", "title": "Fire Era" }, { "field": "state", "title": "State" }, { "field": "area", "title": "Area Burned (M ha)", "format": ".1f" }]
+  "mark": {
+    "type": "bar",
+    "cornerRadiusTopLeft": 2,
+    "cornerRadiusTopRight": 2
   },
-  "config": { "view": { "stroke": null } }
+  "encoding": {
+    "x": {
+      "field": "era",
+      "type": "ordinal",
+      "sort": [
+        "1999-2003",
+        "2004-2009",
+        "2010-2015",
+        "2016-2019",
+        "Black Summer 2019-20"
+      ],
+      "axis": {
+        "title": null,
+        "labelColor": "#888",
+        "labelFont": "DM Mono",
+        "labelFontSize": 10,
+        "grid": false,
+        "domainColor": "#ccc"
+      }
+    },
+    "y": {
+      "field": "area",
+      "type": "quantitative",
+      "title": "Area burned (million hectares)",
+      "axis": {
+        "titleColor": "#888",
+        "labelColor": "#888",
+        "titleFont": "DM Mono",
+        "labelFont": "DM Mono",
+        "titleFontSize": 10,
+        "grid": true,
+        "gridColor": "#e8e0d0"
+      }
+    },
+    "color": {
+      "field": "state",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "New South Wales",
+          "Victoria",
+          "Queensland",
+          "South Australia",
+          "Western Australia",
+          "Northern Territory"
+        ],
+        "range": [
+          "#b83d10",
+          "#9a7820",
+          "#3d5a32",
+          "#7a6e5e",
+          "#1e4a6a",
+          "#5a8a50"
+        ]
+      },
+      "legend": {
+        "title": "State",
+        "labelColor": "#888",
+        "titleColor": "#888",
+        "labelFont": "DM Mono",
+        "orient": "right"
+      }
+    },
+    "xOffset": {
+      "field": "state",
+      "type": "nominal"
+    },
+    "tooltip": [
+      {
+        "field": "era",
+        "title": "Fire Era"
+      },
+      {
+        "field": "state",
+        "title": "State"
+      },
+      {
+        "field": "area",
+        "title": "Area burned (million hectares)",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
 }

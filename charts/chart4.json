@@ -5,50 +5,521 @@
   "background": "transparent",
   "data": {
     "values": [
-      {"state":"NSW","month":"Jan","ffdi":28},{"state":"NSW","month":"Feb","ffdi":24},{"state":"NSW","month":"Mar","ffdi":20},{"state":"NSW","month":"Apr","ffdi":10},{"state":"NSW","month":"May","ffdi":5},{"state":"NSW","month":"Jun","ffdi":3},{"state":"NSW","month":"Jul","ffdi":3},{"state":"NSW","month":"Aug","ffdi":5},{"state":"NSW","month":"Sep","ffdi":12},{"state":"NSW","month":"Oct","ffdi":18},{"state":"NSW","month":"Nov","ffdi":24},{"state":"NSW","month":"Dec","ffdi":28},
-      {"state":"VIC","month":"Jan","ffdi":26},{"state":"VIC","month":"Feb","ffdi":22},{"state":"VIC","month":"Mar","ffdi":16},{"state":"VIC","month":"Apr","ffdi":8},{"state":"VIC","month":"May","ffdi":4},{"state":"VIC","month":"Jun","ffdi":2},{"state":"VIC","month":"Jul","ffdi":2},{"state":"VIC","month":"Aug","ffdi":4},{"state":"VIC","month":"Sep","ffdi":10},{"state":"VIC","month":"Oct","ffdi":16},{"state":"VIC","month":"Nov","ffdi":22},{"state":"VIC","month":"Dec","ffdi":26},
-      {"state":"QLD","month":"Jan","ffdi":18},{"state":"QLD","month":"Feb","ffdi":16},{"state":"QLD","month":"Mar","ffdi":18},{"state":"QLD","month":"Apr","ffdi":14},{"state":"QLD","month":"May","ffdi":10},{"state":"QLD","month":"Jun","ffdi":8},{"state":"QLD","month":"Jul","ffdi":9},{"state":"QLD","month":"Aug","ffdi":12},{"state":"QLD","month":"Sep","ffdi":15},{"state":"QLD","month":"Oct","ffdi":16},{"state":"QLD","month":"Nov","ffdi":18},{"state":"QLD","month":"Dec","ffdi":18},
-      {"state":"SA","month":"Jan","ffdi":24},{"state":"SA","month":"Feb","ffdi":20},{"state":"SA","month":"Mar","ffdi":14},{"state":"SA","month":"Apr","ffdi":7},{"state":"SA","month":"May","ffdi":3},{"state":"SA","month":"Jun","ffdi":2},{"state":"SA","month":"Jul","ffdi":2},{"state":"SA","month":"Aug","ffdi":3},{"state":"SA","month":"Sep","ffdi":9},{"state":"SA","month":"Oct","ffdi":14},{"state":"SA","month":"Nov","ffdi":20},{"state":"SA","month":"Dec","ffdi":24},
-      {"state":"WA","month":"Jan","ffdi":20},{"state":"WA","month":"Feb","ffdi":18},{"state":"WA","month":"Mar","ffdi":14},{"state":"WA","month":"Apr","ffdi":8},{"state":"WA","month":"May","ffdi":5},{"state":"WA","month":"Jun","ffdi":4},{"state":"WA","month":"Jul","ffdi":4},{"state":"WA","month":"Aug","ffdi":6},{"state":"WA","month":"Sep","ffdi":10},{"state":"WA","month":"Oct","ffdi":14},{"state":"WA","month":"Nov","ffdi":18},{"state":"WA","month":"Dec","ffdi":20},
-      {"state":"TAS","month":"Jan","ffdi":18},{"state":"TAS","month":"Feb","ffdi":15},{"state":"TAS","month":"Mar","ffdi":10},{"state":"TAS","month":"Apr","ffdi":5},{"state":"TAS","month":"May","ffdi":3},{"state":"TAS","month":"Jun","ffdi":2},{"state":"TAS","month":"Jul","ffdi":2},{"state":"TAS","month":"Aug","ffdi":3},{"state":"TAS","month":"Sep","ffdi":7},{"state":"TAS","month":"Oct","ffdi":10},{"state":"TAS","month":"Nov","ffdi":14},{"state":"TAS","month":"Dec","ffdi":16},
-      {"state":"NT","month":"Jan","ffdi":12},{"state":"NT","month":"Feb","ffdi":10},{"state":"NT","month":"Mar","ffdi":12},{"state":"NT","month":"Apr","ffdi":15},{"state":"NT","month":"May","ffdi":18},{"state":"NT","month":"Jun","ffdi":20},{"state":"NT","month":"Jul","ffdi":22},{"state":"NT","month":"Aug","ffdi":25},{"state":"NT","month":"Sep","ffdi":22},{"state":"NT","month":"Oct","ffdi":18},{"state":"NT","month":"Nov","ffdi":14},{"state":"NT","month":"Dec","ffdi":12}
+      {
+        "state": "New South Wales",
+        "month": "January",
+        "ffdi": 28
+      },
+      {
+        "state": "New South Wales",
+        "month": "February",
+        "ffdi": 24
+      },
+      {
+        "state": "New South Wales",
+        "month": "March",
+        "ffdi": 20
+      },
+      {
+        "state": "New South Wales",
+        "month": "April",
+        "ffdi": 10
+      },
+      {
+        "state": "New South Wales",
+        "month": "May",
+        "ffdi": 5
+      },
+      {
+        "state": "New South Wales",
+        "month": "June",
+        "ffdi": 3
+      },
+      {
+        "state": "New South Wales",
+        "month": "July",
+        "ffdi": 3
+      },
+      {
+        "state": "New South Wales",
+        "month": "August",
+        "ffdi": 5
+      },
+      {
+        "state": "New South Wales",
+        "month": "September",
+        "ffdi": 12
+      },
+      {
+        "state": "New South Wales",
+        "month": "October",
+        "ffdi": 18
+      },
+      {
+        "state": "New South Wales",
+        "month": "November",
+        "ffdi": 24
+      },
+      {
+        "state": "New South Wales",
+        "month": "December",
+        "ffdi": 28
+      },
+      {
+        "state": "Victoria",
+        "month": "January",
+        "ffdi": 26
+      },
+      {
+        "state": "Victoria",
+        "month": "February",
+        "ffdi": 22
+      },
+      {
+        "state": "Victoria",
+        "month": "March",
+        "ffdi": 16
+      },
+      {
+        "state": "Victoria",
+        "month": "April",
+        "ffdi": 8
+      },
+      {
+        "state": "Victoria",
+        "month": "May",
+        "ffdi": 4
+      },
+      {
+        "state": "Victoria",
+        "month": "June",
+        "ffdi": 2
+      },
+      {
+        "state": "Victoria",
+        "month": "July",
+        "ffdi": 2
+      },
+      {
+        "state": "Victoria",
+        "month": "August",
+        "ffdi": 4
+      },
+      {
+        "state": "Victoria",
+        "month": "September",
+        "ffdi": 10
+      },
+      {
+        "state": "Victoria",
+        "month": "October",
+        "ffdi": 16
+      },
+      {
+        "state": "Victoria",
+        "month": "November",
+        "ffdi": 22
+      },
+      {
+        "state": "Victoria",
+        "month": "December",
+        "ffdi": 26
+      },
+      {
+        "state": "Queensland",
+        "month": "January",
+        "ffdi": 18
+      },
+      {
+        "state": "Queensland",
+        "month": "February",
+        "ffdi": 16
+      },
+      {
+        "state": "Queensland",
+        "month": "March",
+        "ffdi": 18
+      },
+      {
+        "state": "Queensland",
+        "month": "April",
+        "ffdi": 14
+      },
+      {
+        "state": "Queensland",
+        "month": "May",
+        "ffdi": 10
+      },
+      {
+        "state": "Queensland",
+        "month": "June",
+        "ffdi": 8
+      },
+      {
+        "state": "Queensland",
+        "month": "July",
+        "ffdi": 9
+      },
+      {
+        "state": "Queensland",
+        "month": "August",
+        "ffdi": 12
+      },
+      {
+        "state": "Queensland",
+        "month": "September",
+        "ffdi": 15
+      },
+      {
+        "state": "Queensland",
+        "month": "October",
+        "ffdi": 16
+      },
+      {
+        "state": "Queensland",
+        "month": "November",
+        "ffdi": 18
+      },
+      {
+        "state": "Queensland",
+        "month": "December",
+        "ffdi": 18
+      },
+      {
+        "state": "South Australia",
+        "month": "January",
+        "ffdi": 24
+      },
+      {
+        "state": "South Australia",
+        "month": "February",
+        "ffdi": 20
+      },
+      {
+        "state": "South Australia",
+        "month": "March",
+        "ffdi": 14
+      },
+      {
+        "state": "South Australia",
+        "month": "April",
+        "ffdi": 7
+      },
+      {
+        "state": "South Australia",
+        "month": "May",
+        "ffdi": 3
+      },
+      {
+        "state": "South Australia",
+        "month": "June",
+        "ffdi": 2
+      },
+      {
+        "state": "South Australia",
+        "month": "July",
+        "ffdi": 2
+      },
+      {
+        "state": "South Australia",
+        "month": "August",
+        "ffdi": 3
+      },
+      {
+        "state": "South Australia",
+        "month": "September",
+        "ffdi": 9
+      },
+      {
+        "state": "South Australia",
+        "month": "October",
+        "ffdi": 14
+      },
+      {
+        "state": "South Australia",
+        "month": "November",
+        "ffdi": 20
+      },
+      {
+        "state": "South Australia",
+        "month": "December",
+        "ffdi": 24
+      },
+      {
+        "state": "Western Australia",
+        "month": "January",
+        "ffdi": 20
+      },
+      {
+        "state": "Western Australia",
+        "month": "February",
+        "ffdi": 18
+      },
+      {
+        "state": "Western Australia",
+        "month": "March",
+        "ffdi": 14
+      },
+      {
+        "state": "Western Australia",
+        "month": "April",
+        "ffdi": 8
+      },
+      {
+        "state": "Western Australia",
+        "month": "May",
+        "ffdi": 5
+      },
+      {
+        "state": "Western Australia",
+        "month": "June",
+        "ffdi": 4
+      },
+      {
+        "state": "Western Australia",
+        "month": "July",
+        "ffdi": 4
+      },
+      {
+        "state": "Western Australia",
+        "month": "August",
+        "ffdi": 6
+      },
+      {
+        "state": "Western Australia",
+        "month": "September",
+        "ffdi": 10
+      },
+      {
+        "state": "Western Australia",
+        "month": "October",
+        "ffdi": 14
+      },
+      {
+        "state": "Western Australia",
+        "month": "November",
+        "ffdi": 18
+      },
+      {
+        "state": "Western Australia",
+        "month": "December",
+        "ffdi": 20
+      },
+      {
+        "state": "Tasmania",
+        "month": "January",
+        "ffdi": 18
+      },
+      {
+        "state": "Tasmania",
+        "month": "February",
+        "ffdi": 15
+      },
+      {
+        "state": "Tasmania",
+        "month": "March",
+        "ffdi": 10
+      },
+      {
+        "state": "Tasmania",
+        "month": "April",
+        "ffdi": 5
+      },
+      {
+        "state": "Tasmania",
+        "month": "May",
+        "ffdi": 3
+      },
+      {
+        "state": "Tasmania",
+        "month": "June",
+        "ffdi": 2
+      },
+      {
+        "state": "Tasmania",
+        "month": "July",
+        "ffdi": 2
+      },
+      {
+        "state": "Tasmania",
+        "month": "August",
+        "ffdi": 3
+      },
+      {
+        "state": "Tasmania",
+        "month": "September",
+        "ffdi": 7
+      },
+      {
+        "state": "Tasmania",
+        "month": "October",
+        "ffdi": 10
+      },
+      {
+        "state": "Tasmania",
+        "month": "November",
+        "ffdi": 14
+      },
+      {
+        "state": "Tasmania",
+        "month": "December",
+        "ffdi": 16
+      },
+      {
+        "state": "Northern Territory",
+        "month": "January",
+        "ffdi": 12
+      },
+      {
+        "state": "Northern Territory",
+        "month": "February",
+        "ffdi": 10
+      },
+      {
+        "state": "Northern Territory",
+        "month": "March",
+        "ffdi": 12
+      },
+      {
+        "state": "Northern Territory",
+        "month": "April",
+        "ffdi": 15
+      },
+      {
+        "state": "Northern Territory",
+        "month": "May",
+        "ffdi": 18
+      },
+      {
+        "state": "Northern Territory",
+        "month": "June",
+        "ffdi": 20
+      },
+      {
+        "state": "Northern Territory",
+        "month": "July",
+        "ffdi": 22
+      },
+      {
+        "state": "Northern Territory",
+        "month": "August",
+        "ffdi": 25
+      },
+      {
+        "state": "Northern Territory",
+        "month": "September",
+        "ffdi": 22
+      },
+      {
+        "state": "Northern Territory",
+        "month": "October",
+        "ffdi": 18
+      },
+      {
+        "state": "Northern Territory",
+        "month": "November",
+        "ffdi": 14
+      },
+      {
+        "state": "Northern Territory",
+        "month": "December",
+        "ffdi": 12
+      }
     ]
   },
-  "mark": { "type": "rect", "cornerRadius": 2 },
+  "mark": {
+    "type": "rect",
+    "cornerRadius": 2
+  },
   "encoding": {
     "x": {
-      "field": "month", "type": "ordinal",
-      "sort": ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
+      "field": "month",
+      "type": "ordinal",
+      "sort": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
       "axis": {
-        "title": null, "grid": false,
-        "labelColor": "#aaa", "labelFont": "DM Mono", "labelFontSize": 11
+        "title": null,
+        "grid": false,
+        "labelColor": "#aaa",
+        "labelFont": "DM Mono",
+        "labelFontSize": 11
       }
     },
     "y": {
-      "field": "state", "type": "ordinal",
-      "sort": ["NSW","VIC","QLD","SA","WA","TAS","NT"],
+      "field": "state",
+      "type": "ordinal",
+      "sort": [
+        "New South Wales",
+        "Victoria",
+        "Queensland",
+        "South Australia",
+        "Western Australia",
+        "Tasmania",
+        "Northern Territory"
+      ],
       "axis": {
-        "title": null, "grid": false,
-        "labelColor": "#aaa", "labelFont": "DM Mono", "labelFontSize": 11
+        "title": null,
+        "grid": false,
+        "labelColor": "#aaa",
+        "labelFont": "DM Mono",
+        "labelFontSize": 11
       }
     },
     "color": {
-      "field": "ffdi", "type": "quantitative",
-      "scale": { "scheme": "orangered", "domain": [0, 30] },
+      "field": "ffdi",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "orangered",
+        "domain": [
+          0,
+          30
+        ]
+      },
       "legend": {
-        "title": "Avg Dangerous Fire Days / Month",
-        "labelColor": "#aaa", "titleColor": "#ccc",
-        "labelFont": "DM Mono", "titleFont": "DM Mono",
-        "orient": "bottom", "direction": "horizontal",
-        "gradientLength": 220, "gradientThickness": 8,
-        "titleFontSize": 10, "labelFontSize": 9
+        "title": "Average dangerous fire days per month",
+        "labelColor": "#aaa",
+        "titleColor": "#ccc",
+        "labelFont": "DM Mono",
+        "titleFont": "DM Mono",
+        "orient": "bottom",
+        "direction": "horizontal",
+        "gradientLength": 220,
+        "gradientThickness": 8,
+        "titleFontSize": 10,
+        "labelFontSize": 9
       }
     },
     "tooltip": [
-      { "field": "state", "title": "State" },
-      { "field": "month", "title": "Month" },
-      { "field": "ffdi",  "title": "Avg Dangerous Fire Days" }
+      {
+        "field": "state",
+        "title": "State"
+      },
+      {
+        "field": "month",
+        "title": "Month"
+      },
+      {
+        "field": "ffdi",
+        "title": "Average dangerous fire days"
+      }
     ]
   },
-  "config": { "background": "transparent", "view": { "stroke": null } }
+  "config": {
+    "background": "transparent",
+    "view": {
+      "stroke": null
+    }
+  }
 }

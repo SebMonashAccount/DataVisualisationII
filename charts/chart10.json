@@ -1,21 +1,300 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container", "height": 280, "background": "transparent",
+  "width": "container",
+  "height": 280,
+  "background": "transparent",
   "data": {
     "values": [
-      {"year":1990,"state":"QLD","loss_mha":18.0},{"year":1995,"state":"QLD","loss_mha":22.8},{"year":2000,"state":"QLD","loss_mha":27.5},{"year":2005,"state":"QLD","loss_mha":32.3},{"year":2010,"state":"QLD","loss_mha":37.0},{"year":2015,"state":"QLD","loss_mha":41.8},{"year":2019,"state":"QLD","loss_mha":45.7},{"year":2023,"state":"QLD","loss_mha":49.5},
-      {"year":1990,"state":"NSW","loss_mha":12.0},{"year":1995,"state":"NSW","loss_mha":15.0},{"year":2000,"state":"NSW","loss_mha":18.0},{"year":2005,"state":"NSW","loss_mha":21.0},{"year":2010,"state":"NSW","loss_mha":24.0},{"year":2015,"state":"NSW","loss_mha":27.0},{"year":2019,"state":"NSW","loss_mha":29.4},{"year":2023,"state":"NSW","loss_mha":34.2},
-      {"year":1990,"state":"VIC","loss_mha":8.0},{"year":1995,"state":"VIC","loss_mha":9.5},{"year":2000,"state":"VIC","loss_mha":11.0},{"year":2005,"state":"VIC","loss_mha":12.5},{"year":2010,"state":"VIC","loss_mha":14.0},{"year":2015,"state":"VIC","loss_mha":15.5},{"year":2019,"state":"VIC","loss_mha":16.7},{"year":2023,"state":"VIC","loss_mha":20.3},
-      {"year":1990,"state":"WA","loss_mha":6.0},{"year":1995,"state":"WA","loss_mha":8.3},{"year":2000,"state":"WA","loss_mha":10.5},{"year":2005,"state":"WA","loss_mha":12.8},{"year":2010,"state":"WA","loss_mha":15.0},{"year":2015,"state":"WA","loss_mha":17.3},{"year":2019,"state":"WA","loss_mha":18.8},{"year":2023,"state":"WA","loss_mha":21.0},
-      {"year":1990,"state":"SA","loss_mha":4.0},{"year":1995,"state":"SA","loss_mha":5.3},{"year":2000,"state":"SA","loss_mha":6.5},{"year":2005,"state":"SA","loss_mha":7.8},{"year":2010,"state":"SA","loss_mha":9.0},{"year":2015,"state":"SA","loss_mha":10.3},{"year":2019,"state":"SA","loss_mha":11.1},{"year":2023,"state":"SA","loss_mha":12.5}
+      {
+        "year": 1990,
+        "state": "Queensland",
+        "loss_mha": 18
+      },
+      {
+        "year": 1995,
+        "state": "Queensland",
+        "loss_mha": 22.8
+      },
+      {
+        "year": 2000,
+        "state": "Queensland",
+        "loss_mha": 27.5
+      },
+      {
+        "year": 2005,
+        "state": "Queensland",
+        "loss_mha": 32.3
+      },
+      {
+        "year": 2010,
+        "state": "Queensland",
+        "loss_mha": 37
+      },
+      {
+        "year": 2015,
+        "state": "Queensland",
+        "loss_mha": 41.8
+      },
+      {
+        "year": 2019,
+        "state": "Queensland",
+        "loss_mha": 45.7
+      },
+      {
+        "year": 2023,
+        "state": "Queensland",
+        "loss_mha": 49.5
+      },
+      {
+        "year": 1990,
+        "state": "New South Wales",
+        "loss_mha": 12
+      },
+      {
+        "year": 1995,
+        "state": "New South Wales",
+        "loss_mha": 15
+      },
+      {
+        "year": 2000,
+        "state": "New South Wales",
+        "loss_mha": 18
+      },
+      {
+        "year": 2005,
+        "state": "New South Wales",
+        "loss_mha": 21
+      },
+      {
+        "year": 2010,
+        "state": "New South Wales",
+        "loss_mha": 24
+      },
+      {
+        "year": 2015,
+        "state": "New South Wales",
+        "loss_mha": 27
+      },
+      {
+        "year": 2019,
+        "state": "New South Wales",
+        "loss_mha": 29.4
+      },
+      {
+        "year": 2023,
+        "state": "New South Wales",
+        "loss_mha": 34.2
+      },
+      {
+        "year": 1990,
+        "state": "Victoria",
+        "loss_mha": 8
+      },
+      {
+        "year": 1995,
+        "state": "Victoria",
+        "loss_mha": 9.5
+      },
+      {
+        "year": 2000,
+        "state": "Victoria",
+        "loss_mha": 11
+      },
+      {
+        "year": 2005,
+        "state": "Victoria",
+        "loss_mha": 12.5
+      },
+      {
+        "year": 2010,
+        "state": "Victoria",
+        "loss_mha": 14
+      },
+      {
+        "year": 2015,
+        "state": "Victoria",
+        "loss_mha": 15.5
+      },
+      {
+        "year": 2019,
+        "state": "Victoria",
+        "loss_mha": 16.7
+      },
+      {
+        "year": 2023,
+        "state": "Victoria",
+        "loss_mha": 20.3
+      },
+      {
+        "year": 1990,
+        "state": "Western Australia",
+        "loss_mha": 6
+      },
+      {
+        "year": 1995,
+        "state": "Western Australia",
+        "loss_mha": 8.3
+      },
+      {
+        "year": 2000,
+        "state": "Western Australia",
+        "loss_mha": 10.5
+      },
+      {
+        "year": 2005,
+        "state": "Western Australia",
+        "loss_mha": 12.8
+      },
+      {
+        "year": 2010,
+        "state": "Western Australia",
+        "loss_mha": 15
+      },
+      {
+        "year": 2015,
+        "state": "Western Australia",
+        "loss_mha": 17.3
+      },
+      {
+        "year": 2019,
+        "state": "Western Australia",
+        "loss_mha": 18.8
+      },
+      {
+        "year": 2023,
+        "state": "Western Australia",
+        "loss_mha": 21
+      },
+      {
+        "year": 1990,
+        "state": "South Australia",
+        "loss_mha": 4
+      },
+      {
+        "year": 1995,
+        "state": "South Australia",
+        "loss_mha": 5.3
+      },
+      {
+        "year": 2000,
+        "state": "South Australia",
+        "loss_mha": 6.5
+      },
+      {
+        "year": 2005,
+        "state": "South Australia",
+        "loss_mha": 7.8
+      },
+      {
+        "year": 2010,
+        "state": "South Australia",
+        "loss_mha": 9
+      },
+      {
+        "year": 2015,
+        "state": "South Australia",
+        "loss_mha": 10.3
+      },
+      {
+        "year": 2019,
+        "state": "South Australia",
+        "loss_mha": 11.1
+      },
+      {
+        "year": 2023,
+        "state": "South Australia",
+        "loss_mha": 12.5
+      }
     ]
   },
-  "mark": { "type": "area", "opacity": 0.85, "interpolate": "monotone" },
-  "encoding": {
-    "x": { "field": "year", "type": "quantitative", "axis": { "title": null, "grid": false, "labelColor": "#888", "labelFont": "DM Mono", "values": [1990,1995,2000,2005,2010,2015,2019,2023] } },
-    "y": { "field": "loss_mha", "type": "quantitative", "stack": "zero", "title": "Cumulative Habitat Loss (M ha)", "axis": { "titleColor": "#888", "labelColor": "#888", "titleFont": "DM Mono", "labelFont": "DM Mono", "titleFontSize": 10, "grid": true, "gridColor": "#e8e0d0" } },
-    "color": { "field": "state", "type": "nominal", "scale": { "domain": ["QLD","NSW","VIC","WA","SA"], "range": ["#b83d10","#9a7820","#3d5a32","#1e4a6a","#7a6e5e"] }, "legend": { "title": "State", "labelColor": "#888", "titleColor": "#888", "labelFont": "DM Mono", "orient": "bottom" } },
-    "tooltip": [{ "field": "state", "title": "State" }, { "field": "year", "title": "Year" }, { "field": "loss_mha", "title": "Cumulative Loss (M ha)", "format": ".1f" }]
+  "mark": {
+    "type": "area",
+    "opacity": 0.85,
+    "interpolate": "monotone"
   },
-  "config": { "view": { "stroke": null } }
+  "encoding": {
+    "x": {
+      "field": "year",
+      "type": "quantitative",
+        "axis": {
+          "title": null,
+          "grid": false,
+          "labelColor": "#888",
+          "labelFont": "DM Mono",
+          "format": "d",
+          "values": [
+          1990,
+          1995,
+          2000,
+          2005,
+          2010,
+          2015,
+          2019,
+          2023
+        ]
+      }
+    },
+    "y": {
+      "field": "loss_mha",
+      "type": "quantitative",
+      "stack": "zero",
+      "title": "Cumulative habitat loss (million hectares)",
+      "axis": {
+        "titleColor": "#888",
+        "labelColor": "#888",
+        "titleFont": "DM Mono",
+        "labelFont": "DM Mono",
+        "titleFontSize": 10,
+        "grid": true,
+        "gridColor": "#e8e0d0"
+      }
+    },
+    "color": {
+      "field": "state",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "Queensland",
+          "New South Wales",
+          "Victoria",
+          "Western Australia",
+          "South Australia"
+        ],
+        "range": [
+          "#b83d10",
+          "#9a7820",
+          "#3d5a32",
+          "#1e4a6a",
+          "#7a6e5e"
+        ]
+      },
+      "legend": {
+        "title": "State",
+        "labelColor": "#888",
+        "titleColor": "#888",
+        "labelFont": "DM Mono",
+        "orient": "bottom"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "state",
+        "title": "State"
+      },
+      {
+        "field": "year",
+        "title": "Year"
+      },
+      {
+        "field": "loss_mha",
+        "title": "Cumulative loss (million hectares)",
+        "format": ".1f"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
 }

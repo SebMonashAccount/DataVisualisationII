@@ -1,24 +1,122 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": "container", "height": 280, "background": "transparent",
+  "width": "container",
+  "height": 280,
+  "background": "transparent",
   "data": {
     "values": [
-      {"state":"NSW","count":1028,"fire_overlap":82},
-      {"state":"QLD","count":887, "fire_overlap":65},
-      {"state":"VIC","count":654, "fire_overlap":78},
-      {"state":"WA", "count":612, "fire_overlap":45},
-      {"state":"SA", "count":398, "fire_overlap":55},
-      {"state":"TAS","count":312, "fire_overlap":60},
-      {"state":"NT", "count":289, "fire_overlap":38},
-      {"state":"ACT","count":198, "fire_overlap":85}
+      {
+        "state": "New South Wales",
+        "count": 1028,
+        "fire_overlap": 82
+      },
+      {
+        "state": "Queensland",
+        "count": 887,
+        "fire_overlap": 65
+      },
+      {
+        "state": "Victoria",
+        "count": 654,
+        "fire_overlap": 78
+      },
+      {
+        "state": "Western Australia",
+        "count": 612,
+        "fire_overlap": 45
+      },
+      {
+        "state": "South Australia",
+        "count": 398,
+        "fire_overlap": 55
+      },
+      {
+        "state": "Tasmania",
+        "count": 312,
+        "fire_overlap": 60
+      },
+      {
+        "state": "Northern Territory",
+        "count": 289,
+        "fire_overlap": 38
+      },
+      {
+        "state": "Australian Capital Territory",
+        "count": 198,
+        "fire_overlap": 85
+      }
     ]
   },
-  "mark": { "type": "bar", "cornerRadiusTopRight": 3, "cornerRadiusBottomRight": 3 },
-  "encoding": {
-    "y": { "field": "state", "type": "ordinal", "sort": "-x", "axis": { "title": null, "labelColor": "#888", "labelFont": "DM Mono" } },
-    "x": { "field": "count", "type": "quantitative", "axis": { "title": "Threatened Species", "titleColor": "#888", "labelColor": "#888", "labelFont": "DM Mono", "titleFont": "DM Mono", "titleFontSize": 10, "grid": true, "gridColor": "#e8e0d0" } },
-    "color": { "field": "fire_overlap", "type": "quantitative", "title": "% Habitat in 2019-20 Fire", "scale": { "range": ["#e8d8c0","#b83d10"] }, "legend": { "labelColor": "#888", "titleColor": "#888", "labelFont": "DM Mono", "titleFont": "DM Mono", "orient": "bottom", "direction": "horizontal", "gradientLength": 160 } },
-    "tooltip": [{ "field": "state", "title": "State" }, { "field": "count", "title": "Threatened Species" }, { "field": "fire_overlap", "title": "% Habitat Fire Overlap" }]
+  "mark": {
+    "type": "bar",
+    "cornerRadiusTopRight": 3,
+    "cornerRadiusBottomRight": 3
   },
-  "config": { "view": { "stroke": null } }
+  "encoding": {
+    "y": {
+      "field": "state",
+      "type": "ordinal",
+      "sort": "-x",
+      "axis": {
+        "title": null,
+        "labelColor": "#888",
+        "labelFont": "DM Mono"
+      }
+    },
+    "x": {
+      "field": "count",
+      "type": "quantitative",
+      "axis": {
+        "title": "Threatened species",
+        "titleColor": "#888",
+        "labelColor": "#888",
+        "labelFont": "DM Mono",
+        "titleFont": "DM Mono",
+        "titleFontSize": 10,
+        "grid": true,
+        "gridColor": "#e8e0d0"
+      }
+    },
+    "color": {
+      "field": "fire_overlap",
+      "type": "quantitative",
+      "title": "Percentage of habitat in 2019-20 fire footprint",
+      "scale": {
+        "range": [
+          "#e8d8c0",
+          "#b83d10"
+        ]
+      },
+      "legend": {
+        "labelColor": "#888",
+        "titleColor": "#888",
+        "labelFont": "DM Mono",
+        "titleFont": "DM Mono",
+        "orient": "bottom",
+        "direction": "horizontal",
+        "gradientLength": 160,
+        "title": "Habitat in fire footprint",
+        "titleLimit": 260
+      }
+    },
+    "tooltip": [
+      {
+        "field": "state",
+        "title": "State"
+      },
+      {
+        "field": "count",
+        "title": "Threatened species"
+      },
+      {
+        "field": "fire_overlap",
+        "title": "Habitat in 2019-20 fire footprint"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
 }

@@ -5,12 +5,18 @@
   "background": "transparent",
   "projection": {
     "type": "mercator",
-    "center": [134, -28],
+    "center": [
+      134,
+      -28
+    ],
     "scale": 700
   },
   "data": {
     "url": "https://raw.githubusercontent.com/rowanhogan/australian-states/master/states.geojson",
-    "format": { "type": "json", "property": "features" }
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
   },
   "transform": [
     {
@@ -18,53 +24,128 @@
       "from": {
         "data": {
           "values": [
-            { "state": "New South Wales",              "fire_ha": 5820000,  "label": "5.82M ha" },
-            { "state": "Victoria",                     "fire_ha": 1980000,  "label": "1.98M ha" },
-            { "state": "Queensland",                   "fire_ha": 9100000,  "label": "9.10M ha" },
-            { "state": "South Australia",              "fire_ha": 480000,   "label": "480K ha"  },
-            { "state": "Western Australia",            "fire_ha": 12300000, "label": "12.30M ha"},
-            { "state": "Tasmania",                     "fire_ha": 210000,   "label": "210K ha"  },
-            { "state": "Northern Territory",           "fire_ha": 16900000, "label": "16.90M ha"},
-            { "state": "Australian Capital Territory", "fire_ha": 160000,   "label": "160K ha"  }
+            {
+              "state": "New South Wales",
+              "area_km2": 800642,
+              "fire_ha": 5820000,
+              "fire_per_1000km2": 7274,
+              "pct_burned": 72.7
+            },
+            {
+              "state": "Victoria",
+              "area_km2": 227416,
+              "fire_ha": 1980000,
+              "fire_per_1000km2": 8706,
+              "pct_burned": 87.1
+            },
+            {
+              "state": "Queensland",
+              "area_km2": 1730648,
+              "fire_ha": 9100000,
+              "fire_per_1000km2": 5258,
+              "pct_burned": 52.6
+            },
+            {
+              "state": "South Australia",
+              "area_km2": 983482,
+              "fire_ha": 480000,
+              "fire_per_1000km2": 488,
+              "pct_burned": 4.9
+            },
+            {
+              "state": "Western Australia",
+              "area_km2": 2529875,
+              "fire_ha": 12300000,
+              "fire_per_1000km2": 4862,
+              "pct_burned": 48.6
+            },
+            {
+              "state": "Tasmania",
+              "area_km2": 68401,
+              "fire_ha": 210000,
+              "fire_per_1000km2": 3070,
+              "pct_burned": 30.7
+            },
+            {
+              "state": "Northern Territory",
+              "area_km2": 1349129,
+              "fire_ha": 16900000,
+              "fire_per_1000km2": 12527,
+              "pct_burned": 125.3
+            },
+            {
+              "state": "Australian Capital Territory",
+              "area_km2": 2358,
+              "fire_ha": 160000,
+              "fire_per_1000km2": 67861,
+              "pct_burned": 678.6
+            }
           ]
         },
         "key": "state",
-        "fields": ["fire_ha", "label"]
+        "fields": [
+          "fire_ha",
+          "fire_per_1000km2",
+          "pct_burned",
+          "area_km2"
+        ]
       }
     }
   ],
   "mark": {
     "type": "geoshape",
-    "stroke": "rgba(255,255,255,0.3)",
+    "stroke": "rgba(255,255,255,0.35)",
     "strokeWidth": 1.2
   },
   "encoding": {
     "color": {
-      "field": "fire_ha",
+      "field": "fire_per_1000km2",
       "type": "quantitative",
-      "scale": { "scheme": "orangered", "type": "sqrt" },
+      "scale": {
+        "scheme": "orangered",
+        "type": "sqrt"
+      },
       "legend": {
-        "title": "Hectares Burned",
+        "title": "Hectares burned per 1,000 square kilometres",
         "format": ",.0f",
         "orient": "bottom-right",
         "titleFontSize": 10,
         "labelFontSize": 9,
-        "titleColor": "#ccc",
-        "labelColor": "#ccc",
+        "titleColor": "#eee",
+        "labelColor": "#ddd",
         "titleFont": "DM Mono, monospace",
         "labelFont": "DM Mono, monospace",
-        "gradientLength": 160,
-        "gradientThickness": 8
+        "gradientLength": 180,
+        "gradientThickness": 10,
+        "titleLimit": 260
       }
     },
     "tooltip": [
-      { "field": "properties.STATE_NAME", "title": "State / Territory" },
-      { "field": "fire_ha",               "title": "Total Fire Area (ha)", "format": ",.0f" },
-      { "field": "label",                 "title": "Summary" }
+      {
+        "field": "properties.STATE_NAME",
+        "title": "State or Territory"
+      },
+      {
+        "field": "fire_per_1000km2",
+        "title": "Hectares burned per 1,000 square kilometres",
+        "format": ",.0f"
+      },
+      {
+        "field": "pct_burned",
+        "title": "State area burned, cumulative percentage",
+        "format": ".1f"
+      },
+      {
+        "field": "fire_ha",
+        "title": "Total hectares burned",
+        "format": ",.0f"
+      }
     ]
   },
   "config": {
     "background": "transparent",
-    "view": { "stroke": null }
+    "view": {
+      "stroke": null
+    }
   }
 }

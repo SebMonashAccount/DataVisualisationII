@@ -3,8 +3,8 @@
   "width": "container", "height": 400, "background": "transparent",
   "data": {
     "values": [
-      {"species":"KI Dunnart",               "group":"Mammal",  "time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
-      {"species":"KI Dunnart",               "group":"Mammal",  "time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
+      {"species":"Kangaroo Island Dunnart",  "group":"Mammal",  "time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
+      {"species":"Kangaroo Island Dunnart",  "group":"Mammal",  "time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
       {"species":"Long-footed Potoroo",      "group":"Mammal",  "time":"Pre-Fire (2019)","status":2,"label":"Endangered"},
       {"species":"Long-footed Potoroo",      "group":"Mammal",  "time":"Post-Fire (2022)","status":1,"label":"Critically Endangered"},
       {"species":"Greater Glider",           "group":"Mammal",  "time":"Pre-Fire (2019)","status":3,"label":"Vulnerable"},

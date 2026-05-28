@@ -5,71 +5,294 @@
   "background": "transparent",
   "data": {
     "values": [
-      {"year": 1999, "area": 5.2,  "season": "1998-99"},
-      {"year": 2000, "area": 4.8,  "season": "1999-00"},
-      {"year": 2001, "area": 6.1,  "season": "2000-01"},
-      {"year": 2002, "area": 8.3,  "season": "2001-02"},
-      {"year": 2003, "area": 21.2, "season": "2002-03"},
-      {"year": 2004, "area": 4.5,  "season": "2003-04"},
-      {"year": 2005, "area": 5.8,  "season": "2004-05"},
-      {"year": 2006, "area": 4.2,  "season": "2005-06"},
-      {"year": 2007, "area": 7.1,  "season": "2006-07"},
-      {"year": 2008, "area": 5.9,  "season": "2007-08"},
-      {"year": 2009, "area": 3.8,  "season": "2008-09"},
-      {"year": 2010, "area": 6.4,  "season": "2009-10"},
-      {"year": 2011, "area": 5.1,  "season": "2010-11"},
-      {"year": 2012, "area": 7.8,  "season": "2011-12"},
-      {"year": 2013, "area": 9.2,  "season": "2012-13"},
-      {"year": 2014, "area": 6.7,  "season": "2013-14"},
-      {"year": 2015, "area": 5.3,  "season": "2014-15"},
-      {"year": 2016, "area": 8.9,  "season": "2015-16"},
-      {"year": 2017, "area": 6.2,  "season": "2016-17"},
-      {"year": 2018, "area": 7.4,  "season": "2017-18"},
-      {"year": 2019, "area": 8.6,  "season": "2018-19"},
-      {"year": 2020, "area": 24.3, "season": "2019-20 Black Summer"},
-      {"year": 2021, "area": 10.5, "season": "2020-21"},
-      {"year": 2022, "area": 6.8,  "season": "2021-22"},
-      {"year": 2023, "area": 9.1,  "season": "2022-23"},
-      {"year": 2024, "area": 96.1, "season": "2023-24"}
+      {
+        "year": 1999,
+        "area": 5.2,
+        "season": "1998-99"
+      },
+      {
+        "year": 2000,
+        "area": 4.8,
+        "season": "1999-00"
+      },
+      {
+        "year": 2001,
+        "area": 6.1,
+        "season": "2000-01"
+      },
+      {
+        "year": 2002,
+        "area": 8.3,
+        "season": "2001-02"
+      },
+      {
+        "year": 2003,
+        "area": 21.2,
+        "season": "2002-03"
+      },
+      {
+        "year": 2004,
+        "area": 4.5,
+        "season": "2003-04"
+      },
+      {
+        "year": 2005,
+        "area": 5.8,
+        "season": "2004-05"
+      },
+      {
+        "year": 2006,
+        "area": 4.2,
+        "season": "2005-06"
+      },
+      {
+        "year": 2007,
+        "area": 7.1,
+        "season": "2006-07"
+      },
+      {
+        "year": 2008,
+        "area": 5.9,
+        "season": "2007-08"
+      },
+      {
+        "year": 2009,
+        "area": 3.8,
+        "season": "2008-09"
+      },
+      {
+        "year": 2010,
+        "area": 6.4,
+        "season": "2009-10"
+      },
+      {
+        "year": 2011,
+        "area": 5.1,
+        "season": "2010-11"
+      },
+      {
+        "year": 2012,
+        "area": 7.8,
+        "season": "2011-12"
+      },
+      {
+        "year": 2013,
+        "area": 9.2,
+        "season": "2012-13"
+      },
+      {
+        "year": 2014,
+        "area": 6.7,
+        "season": "2013-14"
+      },
+      {
+        "year": 2015,
+        "area": 5.3,
+        "season": "2014-15"
+      },
+      {
+        "year": 2016,
+        "area": 8.9,
+        "season": "2015-16"
+      },
+      {
+        "year": 2017,
+        "area": 6.2,
+        "season": "2016-17"
+      },
+      {
+        "year": 2018,
+        "area": 7.4,
+        "season": "2017-18"
+      },
+      {
+        "year": 2019,
+        "area": 8.6,
+        "season": "2018-19"
+      },
+      {
+        "year": 2020,
+        "area": 24.3,
+        "season": "2019-20 Black Summer"
+      },
+      {
+        "year": 2021,
+        "area": 10.5,
+        "season": "2020-21"
+      },
+      {
+        "year": 2022,
+        "area": 6.8,
+        "season": "2021-22"
+      },
+      {
+        "year": 2023,
+        "area": 9.1,
+        "season": "2022-23"
+      },
+      {
+        "year": 2024,
+        "area": 96.1,
+        "season": "2023-24"
+      }
     ]
   },
   "layer": [
     {
       "mark": {
         "type": "area",
-        "line": { "color": "#b83d10", "strokeWidth": 2 },
+        "line": {
+          "color": "#b83d10",
+          "strokeWidth": 2
+        },
         "color": {
-          "gradient": "linear", "x1": 1, "y1": 0, "x2": 1, "y2": 1,
+          "gradient": "linear",
+          "x1": 1,
+          "y1": 0,
+          "x2": 1,
+          "y2": 1,
           "stops": [
-            { "offset": 0, "color": "rgba(184,61,16,0.35)" },
-            { "offset": 1, "color": "rgba(184,61,16,0.02)" }
+            {
+              "offset": 0,
+              "color": "rgba(184,61,16,0.35)"
+            },
+            {
+              "offset": 1,
+              "color": "rgba(184,61,16,0.02)"
+            }
           ]
         }
       },
       "encoding": {
-        "x": { "field": "year", "type": "quantitative", "axis": { "title": null, "grid": false, "labelColor": "#888", "labelFont": "DM Mono", "tickColor": "transparent", "domainColor": "#ccc" } },
-        "y": { "field": "area", "type": "quantitative", "axis": { "title": "Million Hectares", "titleColor": "#888", "labelColor": "#888", "labelFont": "DM Mono", "titleFont": "DM Mono", "titleFontSize": 10, "grid": true, "gridColor": "#e8e0d0" } },
-        "tooltip": [{ "field": "season", "title": "Season" }, { "field": "area", "title": "Area Burned (M ha)", "format": ".1f" }]
+        "x": {
+          "field": "year",
+          "type": "quantitative",
+          "axis": {
+            "title": null,
+            "grid": false,
+            "labelColor": "#888",
+            "labelFont": "DM Mono",
+            "format": "d",
+            "tickColor": "transparent",
+            "domainColor": "#ccc"
+          }
+        },
+        "y": {
+          "field": "area",
+          "type": "quantitative",
+          "axis": {
+            "title": "Million Hectares",
+            "titleColor": "#888",
+            "labelColor": "#888",
+            "labelFont": "DM Mono",
+            "titleFont": "DM Mono",
+            "titleFontSize": 10,
+            "grid": true,
+            "gridColor": "#e8e0d0"
+          }
+        },
+        "tooltip": [
+          {
+            "field": "season",
+            "title": "Season"
+          },
+          {
+            "field": "area",
+            "title": "Area burned (million hectares)",
+            "format": ".1f"
+          }
+        ]
       }
     },
     {
-      "mark": { "type": "point", "filled": true, "size": 55 },
+      "mark": {
+        "type": "point",
+        "filled": true,
+        "size": 55
+      },
       "encoding": {
-        "x": { "field": "year", "type": "quantitative" },
-        "y": { "field": "area", "type": "quantitative" },
-        "color": { "condition": { "test": "datum.year === 2020 || datum.year === 2024", "value": "#d4621e" }, "value": "rgba(184,61,16,0.25)" }
+        "x": {
+          "field": "year",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "area",
+          "type": "quantitative"
+        },
+        "color": {
+          "condition": {
+            "test": "datum.year === 2020 || datum.year === 2024",
+            "value": "#d4621e"
+          },
+          "value": "rgba(184,61,16,0.25)"
+        }
       }
     },
     {
-      "mark": { "type": "text", "align": "center", "dy": -14, "fontSize": 11, "font": "DM Mono", "fontWeight": 500 },
-      "transform": [{ "filter": "datum.year === 2020" }],
-      "encoding": { "x": { "field": "year", "type": "quantitative" }, "y": { "field": "area", "type": "quantitative" }, "text": { "value": "Black Summer" }, "color": { "value": "#b83d10" } }
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dy": -14,
+        "fontSize": 11,
+        "font": "DM Mono",
+        "fontWeight": 500
+      },
+      "transform": [
+        {
+          "filter": "datum.year === 2020"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "area",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "Black Summer"
+        },
+        "color": {
+          "value": "#b83d10"
+        }
+      }
     },
     {
-      "mark": { "type": "text", "align": "center", "dy": -14, "fontSize": 10, "font": "DM Mono" },
-      "transform": [{ "filter": "datum.year === 2024" }],
-      "encoding": { "x": { "field": "year", "type": "quantitative" }, "y": { "field": "area", "type": "quantitative" }, "text": { "value": "2023-24: 96M ha" }, "color": { "value": "#9a7820" } }
+      "mark": {
+        "type": "text",
+        "align": "center",
+        "dy": -14,
+        "fontSize": 10,
+        "font": "DM Mono"
+      },
+      "transform": [
+        {
+          "filter": "datum.year === 2024"
+        }
+      ],
+      "encoding": {
+        "x": {
+          "field": "year",
+          "type": "quantitative"
+        },
+        "y": {
+          "field": "area",
+          "type": "quantitative"
+        },
+        "text": {
+          "value": "2023-24: 96 million hectares"
+        },
+        "color": {
+          "value": "#9a7820"
+        }
+      }
     }
   ],
-  "config": { "view": { "stroke": null } }
+  "config": {
+    "view": {
+      "stroke": null
+    }
+  }
 }
